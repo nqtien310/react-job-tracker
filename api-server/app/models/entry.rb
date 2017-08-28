@@ -16,4 +16,11 @@ class Entry < ApplicationRecord
   def formatted_date
     self.date.to_s(:dmy)
   end
+
+  def self.in_range(from, to)
+    output = self.all
+    output = output.where('date >= ?', from) if from.present?
+    output = output.where('date <= ?', to)   if to.present?
+    output
+  end
 end

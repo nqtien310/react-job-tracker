@@ -13,4 +13,21 @@ RSpec.describe Entry, type: :model do
       expect(entry.speed).to eq 5
     end
   end
+
+  describe 'in_range' do
+    let(:user) { create(:user) }
+    let!(:entry_1) { create(:entry, date: 1.month.ago, user: user) }
+    let!(:entry_2) { create(:entry, date: 1.week.ago, user: user) }
+    let!(:entry_3) { create(:entry, date: 1.day.ago, user: user) }
+
+    it 'returns correct entries within range' do
+      expect(user.entries.in_range(1.month.ago, 1.month.ago+1.day)).to match_array [entry_1]
+      expect(user.entries.in_range(1.month.ago, Date.today)).to match_array [entry_1,entry_2,entry_3]
+      expect(user.entries.in_range(1.week.ago, Date.today)).to match_array [entry_2,entry_3]
+      expect(user.entries.in_range(1.week.ago, nil)).to match_array [entry_2,entry_3]
+      expect(user.entries.in_range(1.month.ago, 1.week.ago)).to match_array [entry_1,entry_2]
+      expect(user.entries.in_range(nil, nil)).to match_array [entry_1,entry_2,entry_3]
+      expect(Entry.in_range(nil, nil)).to match_array [entry_1,entry_2,entry_3]
+    end
+  end
 end
