@@ -9,4 +9,6 @@ class User < ApplicationRecord
   validates :full_name, presence: true
   validates :role, presence: true, inclusion: {in:  ROLES}
   has_secure_password
+
+  has_many :entries
 end

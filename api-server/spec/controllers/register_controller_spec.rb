@@ -6,14 +6,12 @@ RSpec.describe RegisterController, type: :controller do
       let(:expected_message) { ["Email can't be blank"] }
       let(:params) { { user: attributes_for(:user, email: nil) } }
 
-
       it 'returns error message' do
         post(:create, params: params)
         expect(response).to have_http_status(:error)
         expect(json_response['message']).to eq expected_message
       end
     end
-
 
     context 'valid params' do
       let(:expected_message) do

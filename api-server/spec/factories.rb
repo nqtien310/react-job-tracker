@@ -15,3 +15,12 @@ FactoryGirl.define do
     end
   end
 end
+
+FactoryGirl.define do
+  factory :entry do
+    time_in_second 3600
+    distance_in_metre 18000
+    date Date.today
+    association :user
+  end
+end

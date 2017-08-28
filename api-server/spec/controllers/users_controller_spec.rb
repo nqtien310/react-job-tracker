@@ -6,8 +6,6 @@ RSpec.describe UsersController, type: :controller do
     request.headers.merge!({'Authorization': token})
   end
 
-  render_views
-
   describe 'POST create' do
     let(:invalid_params) { { user: attributes_for(:user, email: nil) }}
     let(:expected_error) { ["Email can't be blank"] }
@@ -35,7 +33,6 @@ RSpec.describe UsersController, type: :controller do
     let(:path)           { :update }
     it_behaves_like 'only accessible by Manager & Admin'
 
-    #Some specific scenarios
     context 'Admin' do
       let(:user) { create(:admin) }
 
@@ -63,7 +60,6 @@ RSpec.describe UsersController, type: :controller do
     let(:path)           { :destroy }
     it_behaves_like 'only accessible by Manager & Admin'
 
-    #Some specific scenarios
     context 'Admin' do
       let(:user) { create(:admin) }
 
