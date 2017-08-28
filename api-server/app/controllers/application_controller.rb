@@ -10,4 +10,10 @@ class ApplicationController < ActionController::API
   def error_render(message)
     render status: :error, json: {message: message}
   end
+
+  def only!(*roles)
+    if !current_user.role.in?(roles)
+      error_render('UNAUTHORIZE')
+    end
+  end
 end

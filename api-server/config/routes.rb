@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   #called in different context
   post '/register', controller: 'register', action: 'create'
 
-  resource 'users'
+  resources 'users'
 
   namespace 'my' do
     resource :user, controller: 'user'
