@@ -1,6 +1,4 @@
 class UsersController < RestfulController
-  before_action :authorize!
-
   private
 
   def permitted_params

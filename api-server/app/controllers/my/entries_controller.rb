@@ -1,4 +1,6 @@
 class My::EntriesController < RestfulController
+  skip_before_action :authorize!
+
   private
 
   def collection

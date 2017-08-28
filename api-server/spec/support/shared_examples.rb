@@ -46,7 +46,7 @@ RSpec.shared_examples 'accessible' do
       send(method,path,params: valid_params)
 
       expect(response).to have_http_status(:ok)
-      expect(json_response['message']).to eq expected_success
+      expect(json_response).to eq expected_success
     end
   end
 end
@@ -56,6 +56,23 @@ RSpec.shared_examples 'inaccessible' do
     send(method, path, params: valid_params)
     expect(response).to have_http_status(:error)
     expect(json_response['message']).to eq 'UNAUTHORIZE'
+  end
+end
+
+RSpec.shared_examples 'only accessible by Admin' do
+  context 'Admin' do
+    let(:user) { create(:admin) }
+    it_behaves_like 'accessible'
+  end
+
+  context 'Manager' do
+    let(:user) { create(:manager) }
+    it_behaves_like 'inaccessible'
+  end
+
+  context 'User' do
+    let(:user) { create(:user) }
+    it_behaves_like 'inaccessible'
   end
 end
 

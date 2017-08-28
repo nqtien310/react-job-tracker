@@ -1,4 +1,5 @@
 class RestfulController < ApplicationController
+  before_action :authorize!
   before_action :load_and_validate_record!, only: [:update, :destroy]
 
   def index

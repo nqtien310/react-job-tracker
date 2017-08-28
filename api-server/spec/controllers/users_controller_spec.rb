@@ -9,7 +9,7 @@ RSpec.describe UsersController, type: :controller do
   describe 'POST create' do
     let(:invalid_params) { { user: attributes_for(:user, email: nil) }}
     let(:expected_error) { ["Email can't be blank"] }
-    let(:expected_success) { "Create user successfully" }
+    let(:expected_success) { {'message'=>"Create user successfully"} }
     let(:valid_params)   { { user: attributes_for(:user) }}
     let(:method)         { :post }
     let(:path)           { :create }
@@ -24,7 +24,7 @@ RSpec.describe UsersController, type: :controller do
         user: attributes_for(:user, email: '') }
     end
     let(:expected_error) { ["Email can't be blank"] }
-    let(:expected_success) { "Update user #{prev_user.id} successfully" }
+    let(:expected_success) { {'message'=>"Update user #{prev_user.id} successfully"} }
     let(:valid_params)   do
       { id: prev_user.id,
         user: attributes_for(:user, full_name: 'New Name') }
@@ -51,7 +51,7 @@ RSpec.describe UsersController, type: :controller do
         user: attributes_for(:user, email: '') }
     end
     let(:expected_error) { "user 989 not found" }
-    let(:expected_success) { "Deleted user #{prev_user.id}" }
+    let(:expected_success) { {'message'=>"Deleted user #{prev_user.id}"} }
     let(:valid_params)   do
       { id: prev_user.id,
         user: attributes_for(:user, full_name: 'New Name') }
