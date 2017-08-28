@@ -19,7 +19,7 @@ RSpec.shared_examples 'request and respond properly to an authenticated endpoint
   end
 end
 
-RSpec.describe CurrentUserController, type: :controller do
+RSpec.describe My::UserController, type: :controller do
   let!(:user) { create(:user) }
   let(:token) { Tokenizer.encode(user_id: user.id) }
 

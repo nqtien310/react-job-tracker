@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   #
   post '/login', controller: 'tokens', action: 'create'
   post '/register', controller: 'users', action: 'create'
-  resource :current_user, controller: 'current_user'
+
+  namespace 'my' do
+    resource :user, controller: 'user'
+  end
 end
