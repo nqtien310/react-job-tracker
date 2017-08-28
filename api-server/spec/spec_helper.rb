@@ -97,3 +97,4 @@ end
 
 require 'support/factory_girl'
 require 'support/controller_helpers'
+require 'support/shared_examples'
