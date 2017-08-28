@@ -94,3 +94,6 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+require 'support/factory_girl'
+require 'support/controller_helpers'
