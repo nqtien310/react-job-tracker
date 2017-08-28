@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe TokensController, type: :controller do
-  render_views
-
   let(:password) { 'password123' }
   let(:wrong_password) { 'iamwrong' }
   let!(:user) { create(:user, password: password) }
