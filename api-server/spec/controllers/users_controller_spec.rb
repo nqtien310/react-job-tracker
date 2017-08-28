@@ -65,7 +65,7 @@ RSpec.describe UsersController, type: :controller do
 
       it 'delete users' do
         send(method, path, params: valid_params)
-        expect { prev_user.reload }.to raise_error
+        expect { prev_user.reload }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end

@@ -12,4 +12,8 @@ class Entry < ApplicationRecord
   def set_speed
     self.speed = (distance_in_metre / time_in_second)
   end
+
+  def formatted_date
+    self.date.to_s(:dmy)
+  end
 end

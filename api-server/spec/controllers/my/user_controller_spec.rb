@@ -11,6 +11,6 @@ RSpec.describe My::UserController, type: :controller do
     let(:method) { :get }
     let(:path) { :show }
 
-    it_behaves_like 'request and respond properly to an authenticated endpoint'
+    it_behaves_like 'authenticable endpoint'
   end
 end

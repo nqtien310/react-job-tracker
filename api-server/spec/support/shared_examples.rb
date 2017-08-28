@@ -1,8 +1,8 @@
-RSpec.shared_examples 'request and respond properly to an authenticated endpoint' do
+RSpec.shared_examples 'authenticable endpoint' do
   context 'unauthenticated' do
     let(:pp) { params rescue {} }
     before do
-      send(method, path, pp)
+      send(method, path, {params: pp})
     end
 
     it 'should be rejected' do
@@ -18,7 +18,7 @@ RSpec.shared_examples 'request and respond properly to an authenticated endpoint
     let(:pp) { params rescue {} }
     before do
       request.headers.merge!({'Authorization': token})
-      send(method, path, pp)
+      send(method, path, {params: pp})
     end
 
     it 'should receive data' do

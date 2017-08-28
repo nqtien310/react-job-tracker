@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
   namespace 'my' do
     resource :user, controller: 'user'
-    resource :entries
+    resources :entries
   end
 end
