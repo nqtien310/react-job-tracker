@@ -1,23 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  let(:email) { 'nqtien310@gmail.com' }
+  let(:params) { { user: attributes_for(:user) } }
 
   describe 'POST create' do
     context 'invalid params' do
-      let(:expected_message) do
-        ["Full name can't be blank",
-        "Role can't be blank",
-        "Role is not included in the list",
-        "Password can't be blank"]
-      end
-
-      let(:params) do
-        {user: {email: email}}
+      let(:expected_message) { ["Full name can't be blank"] }
+      let(:invalid_params) do
+        params.tap {|params| params[:user].delete(:full_name)}
       end
 
       it 'returns error message' do
-        post(:create, params: params)
+        post(:create, params: invalid_params)
         expect(response).to have_http_status(:error)
         expect(json_response['message']).to eq expected_message
       end
@@ -25,18 +19,8 @@ RSpec.describe UsersController, type: :controller do
 
 
     context 'valid params' do
-      let(:params) do
-        { user: {
-          email: email,
-          password: 'valid123',
-          password_confirmation: 'valid123',
-          role: User::ROLE_USER,
-          full_name: 'Tien Nguyen'
-        }}
-      end
-
       let(:expected_message) do
-        "Create user with #{email} successfully"
+        "Create user with #{params[:user][:email]} successfully"
       end
 
       it 'returns creates user if params is valid' do
