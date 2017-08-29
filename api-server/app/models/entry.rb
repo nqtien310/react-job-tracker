@@ -8,6 +8,26 @@ class Entry < ApplicationRecord
 
   belongs_to :user
 
+  class << self
+    def in_range(from_str, to_str)
+      from = parse_search_date(from_str)
+      to   = parse_search_date(to_str)
+      output = self.all
+      output = output.where('date >= ?', from) if from.present?
+      output = output.where('date <= ?', to)   if to.present?
+      output
+    end
+
+    def parse_search_date(date)
+      case
+      when date.is_a?(Time) then date
+      when date.is_a?(Date) then date
+      when date.is_a?(String) then Date.parse(date)
+      else nil
+      end
+    end
+  end
+
   #Average speed in m/s
   def set_speed
     self.speed = (distance_in_metre / time_in_second)
@@ -17,10 +37,8 @@ class Entry < ApplicationRecord
     self.date.to_s(:dmy)
   end
 
-  def self.in_range(from, to)
-    output = self.all
-    output = output.where('date >= ?', from) if from.present?
-    output = output.where('date <= ?', to)   if to.present?
-    output
+
+  def serialized_attrs
+    EntrySerializer.new(self).attributes.deep_stringify_keys
   end
 end

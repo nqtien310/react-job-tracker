@@ -14,10 +14,33 @@ describe User::EntriesController do
     let(:valid_params) { {user_id: resource_user.id} }
     let(:invalid_params) { {user_id: 9090} }
     let(:expected_error) { 'user 9090 not found' }
-    let(:expected_success) do
-      [entry.slice('id', 'time_in_second', 'distance_in_metre', 'formatted_date', 'speed')]
-    end
+    let(:expected_success) { [entry.serialized_attrs] }
     it_behaves_like 'only accessible by Admin'
+  end
+
+  describe 'GET index with search params' do
+    let(:user) { create(:admin) }
+    let!(:entry1) { create(:entry, user: resource_user, date: 1.week.ago) }
+    let!(:entry2) { create(:entry, user: resource_user, date: 2.weeks.ago) }
+
+    it 'should return correct entries that match search params' do
+      from = 1.month.ago.to_date.to_s(:date)
+      to   = 2.weeks.ago.to_date.to_s(:date)
+      get(:index, params: {user_id: resource_user.id, from: from, to: to})
+
+      expect(json_response).to match_array [entry2.serialized_attrs]
+
+      to   = 2.day.ago.to_date.to_s(:date)
+      get(:index, params: {user_id: resource_user.id, to: to})
+
+      expect(json_response).to match_array [entry2.serialized_attrs, entry1.serialized_attrs]
+
+      from = 2.years.ago.to_date.to_s(:date)
+      to   = 1.year.ago.to_date.to_s(:date)
+      get(:index, params: {user_id: resource_user.id, from: from, to: to})
+
+      expect(json_response).to be_empty
+    end
   end
 
   describe 'POST create' do

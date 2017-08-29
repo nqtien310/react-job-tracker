@@ -16,6 +16,32 @@ describe My::EntriesController do
     it_behaves_like 'authenticable endpoint'
   end
 
+  describe 'GET index with search params' do
+    let!(:entry1) { create(:entry, user: user, date: 1.week.ago) }
+    let!(:entry2) { create(:entry, user: user, date: 2.weeks.ago) }
+
+    it 'should return correct entries that match search params' do
+      request.headers.merge!({'Authorization': token})
+
+      from = 1.month.ago.to_date.to_s(:date)
+      to   = 2.weeks.ago.to_date.to_s(:date)
+      get(:index, params: {from: from, to: to})
+
+      expect(json_response).to match_array [entry2.serialized_attrs]
+
+      to   = 2.day.ago.to_date.to_s(:date)
+      get(:index, params: {to: to})
+
+      expect(json_response).to match_array [entry2.serialized_attrs, entry1.serialized_attrs]
+
+      from = 2.years.ago.to_date.to_s(:date)
+      to   = 1.year.ago.to_date.to_s(:date)
+      get(:index, params: {from: from, to: to})
+
+      expect(json_response).to be_empty
+    end
+  end
+
   describe 'POST create' do
     let(:method) { :post }
     let(:path)   { :create }

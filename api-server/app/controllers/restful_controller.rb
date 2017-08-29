@@ -3,7 +3,7 @@ class RestfulController < ApplicationController
   before_action :load_and_validate_record!, only: [:update, :destroy]
 
   def index
-    ok_render(collection)
+    ok_render(filtered_collection)
   end
 
   def create
@@ -44,5 +44,9 @@ class RestfulController < ApplicationController
     if @record.nil?
       error_render("#{model_name} #{params[:id]} not found")
     end
+  end
+
+  def filtered_collection
+    collection
   end
 end

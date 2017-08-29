@@ -29,5 +29,12 @@ RSpec.describe Entry, type: :model do
       expect(user.entries.in_range(nil, nil)).to match_array [entry_1,entry_2,entry_3]
       expect(Entry.in_range(nil, nil)).to match_array [entry_1,entry_2,entry_3]
     end
+
+    it 'receives strings as params' do
+      from = 1.month.ago.to_date.to_s
+      to   = 1.week.ago.to_date.to_s
+
+      expect(user.entries.in_range(from, to)).to match_array [entry_1, entry_2]
+    end
   end
 end
