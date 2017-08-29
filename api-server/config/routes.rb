@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   resources 'users' do
     scope module: 'user' do
       resources :entries
+      resources :weekly_summaries, only: [:index]
     end
   end
 
   namespace 'my' do
     resource :user, controller: 'user'
     resources :entries
+    resources :weekly_summaries, only: [:index]
   end
 end

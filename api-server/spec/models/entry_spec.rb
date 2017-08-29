@@ -37,4 +37,23 @@ RSpec.describe Entry, type: :model do
       expect(user.entries.in_range(from, to)).to match_array [entry_1, entry_2]
     end
   end
+
+  describe 'average_speed' do
+    let(:user) { create(:user) }
+    let!(:entry_1) { create(:entry, date: 1.month.ago, user: user) }
+    let!(:entry_2) { create(:entry, date: 1.week.ago, user: user) }
+    let!(:entry_3) do
+      create(:entry, date: 1.day.ago, user: user,
+             time_in_second: 4000, distance_in_metre: 25000)
+    end
+
+    #Does not include this
+    let!(:entry_4) do
+      create(:entry, date: 2.day.ago, time_in_second: 4000, distance_in_metre: 250000)
+    end
+
+    it 'returns correct average speed' do
+      expect(user.entries.average_speed).to eq 5.33
+    end
+  end
 end

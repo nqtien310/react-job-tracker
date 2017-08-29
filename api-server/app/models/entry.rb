@@ -1,7 +1,7 @@
 class Entry < ApplicationRecord
   validates :distance_in_metre, presence: true
   validates :time_in_second, presence: true
-  validates :date, presence: true, uniqueness: true
+  validates :date, presence: true, uniqueness: { scope: 'user_id' }
   validates :user, presence: true
 
   before_save :set_speed
@@ -26,6 +26,10 @@ class Entry < ApplicationRecord
       else nil
       end
     end
+
+    def average_speed
+      average(:speed).round(2)
+    end
   end
 
   #Average speed in m/s
@@ -36,7 +40,6 @@ class Entry < ApplicationRecord
   def formatted_date
     self.date.to_s(:dmy)
   end
-
 
   def serialized_attrs
     EntrySerializer.new(self).attributes.deep_stringify_keys
