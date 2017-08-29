@@ -26,10 +26,6 @@ class Entry < ApplicationRecord
       else nil
       end
     end
-
-    def average_speed
-      average(:speed).round(2)
-    end
   end
 
   #Average speed in m/s
