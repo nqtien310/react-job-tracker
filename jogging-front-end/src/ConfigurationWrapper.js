@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { store } from './store'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-export default function App(props) {
+export default function ConfigurableWrapper(props) {
   return (
     <Provider store={store}>
       <BrowserRouter>

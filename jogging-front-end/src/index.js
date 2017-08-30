@@ -5,6 +5,7 @@ import App from './App';
 import Auth from './auth'
 import registerServiceWorker from './registerServiceWorker';
 import Api from './api'
+import Router from './Router'
 
 //Api.post("login",
   //{user: {
@@ -19,5 +20,11 @@ import Api from './api'
 
 //Auth.clearToken()
 //Api.post("my/entries", {entry: {date:'2017-01-01'}})
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(
+  <App>
+    <Router />
+  </App>
+, document.getElementById('root'));
+
 registerServiceWorker();
