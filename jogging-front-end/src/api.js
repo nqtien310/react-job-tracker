@@ -7,9 +7,8 @@ let axios = Axios.create({
 })
 
 axios.interceptors.request.use(config => {
-  let token = null
-  if(token=Auth.getToken()){
-    config.headers['Authorization'] = token
+  if(Auth.getToken()){
+    config.headers['Authorization'] = Auth.getToken()
   }
   return config
 })
