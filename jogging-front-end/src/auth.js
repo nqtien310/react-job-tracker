@@ -10,6 +10,10 @@ const Auth = {
 
   clearToken: () => {
     localStorage.removeItem(TOKEN_KEY)
+  },
+
+  isLogin: () => {
+    return !!localStorage.getItem(TOKEN_KEY)
   }
 }
 
