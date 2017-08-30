@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { BrowserRouter } from 'react-router-dom'
-import { tryAuthenticate } from './epics/authentication_epic'
+import { TryAuthenticate } from './epics/authentication_epic'
 import auth from './auth'
 
 class App extends React.Component {
@@ -12,7 +12,7 @@ class App extends React.Component {
 
   componentWillMount(){
     if(auth.isLogin()){
-      store.dispatch(tryAuthenticate())
+      store.dispatch(TryAuthenticate())
     }
   }
 

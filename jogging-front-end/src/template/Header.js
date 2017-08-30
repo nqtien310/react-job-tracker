@@ -1,5 +1,6 @@
 import React from 'react';
 import NavLink from './NavLink'
+import {connect} from 'react-redux'
 
 class Header extends React.Component{
   constructor(props){
@@ -7,6 +8,7 @@ class Header extends React.Component{
   }
 
   render(){
+    debugger
     return (
       <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse">
         <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,4 +27,10 @@ class Header extends React.Component{
   }
 }
 
+function mapStateToProps(state){
+  return {
+    currentUser: state.currentUser
+  }
+}
+Header = connect(mapStateToProps)(Header)
 export default Header
