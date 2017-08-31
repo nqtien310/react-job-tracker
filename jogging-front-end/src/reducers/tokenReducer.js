@@ -1,4 +1,5 @@
 import {SETTOKEN} from '../Login/state'
+import {CLEARTOKEN} from '../epics/logout'
 import Auth from '../auth'
 
 export default function tokenReducer(state=null, action){
@@ -6,6 +7,9 @@ export default function tokenReducer(state=null, action){
     case SETTOKEN: {
       Auth.setToken(action.payload.data.token)
       return "SET"
+    } case CLEARTOKEN: {
+      Auth.clearToken()
+      return null
     }default: {
       return state
     }

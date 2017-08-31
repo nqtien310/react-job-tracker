@@ -2,6 +2,7 @@ import React from 'react';
 import NavLink from './NavLink'
 import {connect} from 'react-redux'
 import NavBar from './NavBar'
+import {logout} from '../epics/logout'
 
 class Header extends React.Component{
   constructor(props){
@@ -13,7 +14,12 @@ class Header extends React.Component{
       return (
         <NavBar>
           <NavLink to="/" label="Home"/>
-          <NavLink to="/logout" label={"Logout" + " " + this.props.myUser.email}/>
+
+          <li className={"nav-item"}>
+            <a onClick={this.props.logout} className="nav-link">
+              Logout {this.props.myUser.email}
+            </a>
+          </li>
         </NavBar>
       )
     }else{
@@ -32,5 +38,7 @@ function mapStateToProps(state){
     myUser: state.myUser
   }
 }
-Header = connect(mapStateToProps)(Header)
+Header = connect(mapStateToProps, {
+  logout
+})(Header)
 export default Header
