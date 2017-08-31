@@ -15,7 +15,7 @@ class Home extends React.Component{
   render() {
     return (
       <div>
-        <Entries/>
+        <Entries userId={this.props.myUser.id}/>
       </div>
     )
   }

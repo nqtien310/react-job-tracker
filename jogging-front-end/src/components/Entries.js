@@ -1,15 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { deleteEntry } from '../epics/deleteEntryEpic'
 
 class Entries extends React.Component{
   constructor(props) {
     super(props)
   }
 
+  onDelete(id){
+    this.props.deleteEntry(this.props.userId, id)
+  }
+
   renderEntries() {
     return this.props.entries.map(entry => {
       return(
-        <tr>
+        <tr key={entry.id}>
           <td>
             {entry.distance_in_metre} m
           </td>
@@ -22,6 +27,9 @@ class Entries extends React.Component{
           <td>
             {entry.formatted_date}
           </td>
+          <td>
+            <a onClick={()=> this.onDelete(entry.id)} className="btn btn-danger">Delete</a>
+          </td>
         </tr>
       )
     })
@@ -31,10 +39,13 @@ class Entries extends React.Component{
     return (
       <table className="table">
         <thead>
-          <th>Distance</th>
-          <th>Speed</th>
-          <th>Time In Second</th>
-          <th>Date</th>
+          <tr>
+            <th>Distance</th>
+            <th>Speed</th>
+            <th>Time In Second</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
         </thead>
 
         <tbody>
@@ -50,4 +61,6 @@ function mapStateToProps(state){
     entries: state.entries
   }
 }
-export default connect(mapStateToProps)(Entries)
+export default connect(mapStateToProps, {
+  deleteEntry
+})(Entries)
