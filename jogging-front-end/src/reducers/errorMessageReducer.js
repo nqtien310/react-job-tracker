@@ -1,4 +1,4 @@
-import { SET_ERROR_MESSAGE } from '../actions/ErrorActions'
+import { SET_ERROR_MESSAGE } from '../actions/setErrorMessage'
 
 export default function ErrorMessageReducer(state=null, action) {
   switch(action.type){

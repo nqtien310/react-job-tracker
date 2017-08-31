@@ -1,6 +1,7 @@
 import React from 'react';
 import NavLink from './NavLink'
 import {connect} from 'react-redux'
+import NavBar from './NavBar'
 
 class Header extends React.Component{
   constructor(props){
@@ -8,22 +9,21 @@ class Header extends React.Component{
   }
 
   render(){
-    debugger
-    return (
-      <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-        <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <a className="navbar-brand" href="/">Navbar</a>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <NavLink to="/" label="Home"/>
-            <NavLink to="/login" label="Login"/>
-          </ul>
-        </div>
-      </nav>
-    )
+    if(this.props.currentUser){
+      return (
+        <NavBar>
+          <NavLink to="/" label="Home"/>
+          <NavLink to="/logout" label={"Logout" + " " + this.props.currentUser.email}/>
+        </NavBar>
+      )
+    }else{
+      return (
+        <NavBar>
+          <NavLink to="/" label="Home"/>
+          <NavLink to="/login" label="Login"/>
+        </NavBar>
+      )
+    }
   }
 }
 
