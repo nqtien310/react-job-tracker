@@ -5,14 +5,14 @@ import FieldsList from '../components/FieldsList'
 import {Link} from 'react-router-dom'
 import Submit from '../components/Submit'
 import FormGroupAlignedRight from '../components/FormGroupAlignedRight'
-import { SubmitLogin } from './state'
+import { submitLogin } from './state'
 import { connect } from 'react-redux'
 import ErrorMessage from '../components/ErrorMessage'
 
 function LoginForm(props) {
   return (
     <Template>
-      <form onSubmit={props.handleSubmit(props.SubmitLogin)}>
+      <form onSubmit={props.handleSubmit(props.submitLogin)}>
         <ErrorMessage />
         <FieldsList fields={props.fields} focusOn="email"/>
 
@@ -35,7 +35,7 @@ LoginForm = reduxForm({
 })(LoginForm)
 
 LoginForm = connect(null, {
-  SubmitLogin
+  submitLogin
 })(LoginForm)
 
 export default LoginForm

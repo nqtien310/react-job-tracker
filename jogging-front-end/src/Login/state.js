@@ -1,4 +1,4 @@
-import { tryAuthenticate } from '../epics/authentication_epic'
+import { fetchMyUser } from '../epics/fetchMyUserEpic'
 import Auth from '../auth'
 import 'rxjs/add/operator/switchMap';
 import Rx from 'rxjs/Rx'
@@ -8,7 +8,7 @@ import setErrorMessage from '../actions/setErrorMessage.js'
 export const LOGIN = 'LOGIN'
 export const SETTOKEN = 'SETTOKEN'
 
-export const SubmitLogin = params => ({type: LOGIN, payload: params})
+export const submitLogin = params => ({type: LOGIN, payload: params})
 export const setToken    = params => ({type: SETTOKEN, payload: params})
 
 export const loginEpic = (action$) => {
@@ -18,7 +18,7 @@ export const loginEpic = (action$) => {
     ).flatMap(response =>
         Rx.Observable.concat(
           Rx.Observable.of(setToken(response)),
-          Rx.Observable.of(tryAuthenticate())
+          Rx.Observable.of(fetchMyUser())
         )
       ).catch(error => Rx.Observable.of(setErrorMessage(error)))
   })

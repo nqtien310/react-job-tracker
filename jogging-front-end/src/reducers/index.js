@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
-import currentUserReducer from './current_user_reducer'
+import { myUserReducer } from '../epics/fetchMyUserEpic'
 import errorMessageReducer from './errorMessageReducer'
 import tokenReducer from './tokenReducer'
 
 let indexReducer = combineReducers({
   form: formReducer,
-  currentUser: currentUserReducer,
+  myUser: myUserReducer,
   token: tokenReducer,
   errorMessage: errorMessageReducer
 })

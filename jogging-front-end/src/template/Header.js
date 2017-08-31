@@ -9,11 +9,11 @@ class Header extends React.Component{
   }
 
   render(){
-    if(this.props.currentUser){
+    if(this.props.myUser){
       return (
         <NavBar>
           <NavLink to="/" label="Home"/>
-          <NavLink to="/logout" label={"Logout" + " " + this.props.currentUser.email}/>
+          <NavLink to="/logout" label={"Logout" + " " + this.props.myUser.email}/>
         </NavBar>
       )
     }else{
@@ -29,7 +29,7 @@ class Header extends React.Component{
 
 function mapStateToProps(state){
   return {
-    currentUser: state.currentUser
+    myUser: state.myUser
   }
 }
 Header = connect(mapStateToProps)(Header)
