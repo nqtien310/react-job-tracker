@@ -1,5 +1,4 @@
 import api from '../api'
-import 'rxjs/add/operator/switchMap';
 import Rx from 'rxjs/Rx'
 
 const DONE_FETCHING_MY_USER = 'DONE_FETCHING_MY_USER'

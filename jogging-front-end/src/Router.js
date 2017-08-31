@@ -7,6 +7,7 @@ export default function Router() {
   return (
     <div>
       <Route exact path="/" component={Home}/>
+      <Route exact path="/entries" component={Login}/>
       <Route exact path="/login" component={Login}/>
     </div>
   )
