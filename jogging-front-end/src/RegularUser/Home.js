@@ -1,5 +1,5 @@
 import React from 'react';
-import Entries from '../components/Entries'
+import Entries from '../Entries'
 import { fetchEntries } from '../epics/fetchEntriesEpic'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'

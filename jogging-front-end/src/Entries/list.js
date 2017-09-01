@@ -1,8 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { deleteEntry } from '../epics/deleteEntryEpic'
 
-class Entries extends React.Component{
+class List extends React.Component{
   constructor(props) {
     super(props)
   }
@@ -19,16 +17,17 @@ class Entries extends React.Component{
             {entry.distance_in_metre} m
           </td>
           <td>
-            {entry.speed} m/s
-          </td>
-          <td>
             {entry.time_in_second} s
           </td>
           <td>
             {entry.formatted_date}
           </td>
           <td>
+            {entry.speed} m/s
+          </td>
+          <td className="actions">
             <a onClick={()=> this.onDelete(entry.id)} className="btn btn-danger">Delete</a>
+            <a onClick={()=> this.onEdit(entry.id)} className="btn btn-warning">Edit</a>
           </td>
         </tr>
       )
@@ -41,9 +40,9 @@ class Entries extends React.Component{
         <thead>
           <tr>
             <th>Distance</th>
-            <th>Speed</th>
-            <th>Time In Second</th>
+            <th>Time</th>
             <th>Date</th>
+            <th>Speed</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -56,11 +55,4 @@ class Entries extends React.Component{
   }
 }
 
-function mapStateToProps(state){
-  return {
-    entries: state.entries
-  }
-}
-export default connect(mapStateToProps, {
-  deleteEntry
-})(Entries)
+export default List

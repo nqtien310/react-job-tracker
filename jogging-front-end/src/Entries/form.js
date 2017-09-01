@@ -1,6 +1,6 @@
 import React from 'react'
 import Template from '../Template'
-import { reduxForm } from 'redux-form'
+import { reduxForm,Field } from 'redux-form'
 import FieldsList from '../components/FieldsList'
 import Submit from '../components/Submit'
 import ErrorMessage from '../components/ErrorMessage'
@@ -16,16 +16,35 @@ class EntryForm extends React.Component{
     this.props.createEntry(this.props.match.params.userId, params)
   }
 
+  renderFields() {
+    return this.props.fields.map( (f) => {
+      return (<td>
+        <Field autoFocus={f.name=="distance_in_metre"} className="form-control"
+          id={f.name}
+          name={f.name}
+          component={f.component}
+          type={f.type}
+        />
+      </td>)
+    })
+  }
+
   render() {
     return (
-      <Template>
-        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-          <ErrorMessage />
-          <FieldsList fields={this.props.fields} focusOn="email"/>
+      <form id="entry-form" onSubmit={this.props.handleSubmit(this.onSubmit)}>
+        <table className="table">
+          <tbody>
+            <tr>
+              {this.renderFields()}
+              <td></td>
+              <td>
+                <Submit label="Save" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-          <Submit label="Login" />
-        </form>
-      </Template>
+      </form>
     )
   }
 }
