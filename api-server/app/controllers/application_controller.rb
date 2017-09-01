@@ -8,11 +8,14 @@ class ApplicationController < ActionController::API
   end
 
   def error_render(message)
+    if message.is_a?(Array)
+      message = message.join('\n')
+    end
     render status: :error, json: {message: message}
   end
 
   def only!(*roles)
-    if !current_user.role.in?(roles)
+    if current_user != @user && !current_user.role.in?(roles)
       error_render('UNAUTHORIZE')
     end
   end
