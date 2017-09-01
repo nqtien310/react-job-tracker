@@ -4,6 +4,7 @@ import 'rxjs/add/operator/switchMap';
 import Rx from 'rxjs/Rx'
 import api from '../api'
 import setErrorMessage from '../actions/setErrorMessage.js'
+import { push } from 'react-router-redux'
 
 export const LOGIN  = 'LOGIN'
 export const SETTOKEN = 'SETTOKEN'
@@ -16,9 +17,8 @@ export const loginEpic = (action$) => {
   return action$.ofType(LOGIN).switchMap(action =>{
     return Rx.Observable.fromPromise(
       api.post('login', {user: action.payload})
-    ).flatMap(response =>
-        [setToken(response), fetchMyUser()]
-      ).catch(error => setErrorMessage(error))
+    ).flatMap(response => [setToken(response), fetchMyUser(), push('/')]
+    ).catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }
 

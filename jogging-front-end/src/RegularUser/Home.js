@@ -2,6 +2,7 @@ import React from 'react';
 import Entries from '../components/Entries'
 import { fetchEntries } from '../epics/fetchEntriesEpic'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class Home extends React.Component{
   constructor(props) {
@@ -15,6 +16,7 @@ class Home extends React.Component{
   render() {
     return (
       <div>
+        <Link to={`/user/${this.props.myUser.id}/entries/new`}className="btn btn-primary">Add</Link>
         <Entries userId={this.props.myUser.id}/>
       </div>
     )
