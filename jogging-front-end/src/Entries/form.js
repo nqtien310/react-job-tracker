@@ -7,8 +7,6 @@ import ErrorMessage from '../components/ErrorMessage'
 import { connect } from 'react-redux'
 import { createEntry, updateEntry } from './state'
 import DatePicker from 'react-datepicker'
-import moment from 'moment'
-import 'react-datepicker/dist/react-datepicker.css'
 import renderDatePicker from '../components/RenderDatePicker'
 
 class EntryForm extends React.Component{

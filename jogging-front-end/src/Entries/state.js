@@ -93,7 +93,7 @@ export const deleteEntryEpic = (action$) => {
   return action$.ofType(ENTRY_DELETE).switchMap( action => {
     return Rx.Observable.fromPromise(
       api.delete(`users/${action.payload.userId}/entries/${action.payload.id}`)
-    ).flatMap(response => [fetchEntries(action.payload.userId), hideForm()])
+    ).flatMap(response => [fetchEntries(action.payload.userId), hideForm(), setErrorMessage(null)])
   })
 }
 
@@ -101,7 +101,8 @@ export const updateEntryEpic = (action$) => {
   return action$.ofType(ENTRY_UPDATE).switchMap( action => {
     return Rx.Observable.fromPromise(
       api.put(`users/${action.payload.userId}/entries/${action.payload.id}`, action.payload.params)
-    ).flatMap(response => [fetchEntries(action.payload.userId), hideForm()])
+    ).flatMap(response => [fetchEntries(action.payload.userId), hideForm(), setErrorMessage(null)])
+    .catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }
 
@@ -117,7 +118,7 @@ export const createEntryEpic = (action$) => {
   return action$.ofType(ENTRY_CREATE).switchMap( action => {
     return Rx.Observable.fromPromise(
       api.post(`users/${action.payload.userId}/entries`, action.payload.params)
-    ).flatMap(() => [fetchEntries(action.payload.userId), hideForm()]
+    ).flatMap(() => [fetchEntries(action.payload.userId), hideForm(), setErrorMessage(null)]
     ).catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }

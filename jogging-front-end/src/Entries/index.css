@@ -11,3 +11,15 @@ table td input.form-control{
   margin-right: 50px;
   display: inline-block;
 }
+
+.date-filters {
+  margin-bottom: 20px
+}
+
+.date-filters > div {
+  display: inline-block;
+}
+.date-filter {
+  width: 150px;
+  margin-left: 30px;
+}
