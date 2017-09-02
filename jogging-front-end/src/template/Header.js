@@ -30,7 +30,7 @@ class Header extends React.Component{
           </li>
         </NavBar>
       )
-    }else if(this.props.myUser.role == 'admin'){
+    }else if(this.props.myUser.role == 'admin' || this.props.myUser.role == 'manager'){
       return (
         <NavBar>
           <NavLink to="/" label="Home"/>

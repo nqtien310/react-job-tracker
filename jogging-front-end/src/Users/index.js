@@ -12,18 +12,31 @@ class UsersList extends React.Component{
     this.props.deleteUser(userId)
   }
 
+  renderEntriesActions(user) {
+    if(this.props.myUser.role == "admin"){
+      return (
+        <td className="actions">
+          <a onClick={()=> this.onDelete(user.id)} className="btn btn-danger">Delete</a>
+          <Link to={`/users/${user.id}/edit`} className="btn btn-warning">Edit</Link>
+          <Link to={`/users/${user.id}/entries`} className="btn btn-primary">Entries</Link>
+          <Link to={`/users/${user.id}/report`} className="btn btn-primary">Report</Link>
+        </td>
+      )
+    }else {
+      return (<td className="actions">
+        <a onClick={()=> this.onDelete(user.id)} className="btn btn-danger">Delete</a>
+        <Link to={`/users/${user.id}/edit`} className="btn btn-warning">Edit</Link>
+      </td> )
+    }
+  }
+
   renderUsers() {
     return this.props.users.map(user => {
       return(
         <tr key={user.id}>
           <td> {user.email} </td>
           <td> {user.full_name} </td>
-          <td className="actions">
-            <a onClick={()=> this.onDelete(user.id)} className="btn btn-danger">Delete</a>
-            <Link to={`/users/${user.id}/edit`} className="btn btn-warning">Edit</Link>
-            <Link to={`/users/${user.id}/entries`} className="btn btn-primary">Entries</Link>
-            <Link to={`/users/${user.id}/report`} className="btn btn-primary">Report</Link>
-          </td>
+          {this.renderEntriesActions(user)}
         </tr>
       )
     })
