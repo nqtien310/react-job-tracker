@@ -6,6 +6,7 @@ import tokenReducer from './tokenReducer'
 import {entryReducer} from '../Entries/state.js'
 import { routerReducer } from 'react-router-redux'
 import { reportReducer } from '../ReportList/state.js'
+import { userReducer } from '../UsersList/state.js'
 
 let indexReducer = combineReducers({
   form: formReducer,
@@ -14,7 +15,8 @@ let indexReducer = combineReducers({
   errorMessage: errorMessageReducer,
   routing: routerReducer,
   entry: entryReducer,
-  report: reportReducer
+  report: reportReducer,
+  user: userReducer
 })
 
 export default indexReducer

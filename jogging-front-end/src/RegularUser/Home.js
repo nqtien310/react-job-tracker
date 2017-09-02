@@ -22,12 +22,4 @@ class Home extends React.Component{
   }
 }
 
-function mapStateToProps(state){
-  return {
-    myUser: state.myUser
-  }
-}
-export default connect(mapStateToProps,{
-  fetchEntries
-
-})(Home)
+export default connect(null, { fetchEntries })(Home)
