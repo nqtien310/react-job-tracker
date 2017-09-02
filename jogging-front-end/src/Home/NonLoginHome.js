@@ -1,9 +1,6 @@
 import React from 'react';
+import Login from '../Login'
 
 export default function NonLoginHome(props) {
-  return(
-    <div>
-      Login pls
-    </div>
-  )
+  return <Login />
 }

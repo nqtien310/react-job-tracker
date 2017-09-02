@@ -8,6 +8,6 @@ export const CLEARTOKEN = 'CLEARTOKEN'
 
 export const logoutEpic = (action$) => {
   return action$.ofType(LOGOUT).flatMap(action =>{
-    return [clearToken(), unsetMyUser(), push("/login")]
+    return [clearToken(), unsetMyUser(), push("/")]
   })
 }

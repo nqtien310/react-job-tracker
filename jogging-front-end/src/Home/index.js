@@ -6,19 +6,21 @@ import RegularUserHome from '../RegularUser/Home'
 import AdminUserHome from '../AdminUser/Home'
 
 function Home(props) {
-  function renderHomeAccordingly(){
-    if(!props.myUser) {
-      return <NonLoginHome/>
-    }else if(props.myUser.role === 'user') {
-      return <RegularUserHome myUser={props.myUser}/>
-    }else if(props.myUser.role === 'admin') {
-      return <AdminUserHome myUser={props.myUser}/>
-    }
+  if(!props.myUser) {
+    return <NonLoginHome/>
+  }else if(props.myUser.role === 'user') {
+    return (
+      <Template>
+        <RegularUserHome myUser={props.myUser}/>
+      </Template>
+    )
+  }else if(props.myUser.role === 'admin') {
+    return (
+      <Template>
+        <AdminUserHome myUser={props.myUser}/>
+      </Template>
+    )
   }
-
-  return (
-    <Template> {renderHomeAccordingly()} </Template>
-  )
 }
 
 function mapStateToProps(state){

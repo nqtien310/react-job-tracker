@@ -14,7 +14,6 @@ class Header extends React.Component{
       return (
         <NavBar>
           <NavLink to="/" label="Home"/>
-          <NavLink to="/login" label="Login"/>
           <NavLink to="/register" label="Register"/>
         </NavBar>
       )
