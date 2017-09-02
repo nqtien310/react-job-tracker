@@ -1,9 +1,13 @@
 class RestfulController < ApplicationController
   before_action :authorize!
-  before_action :load_and_validate_record!, only: [:update, :destroy]
+  before_action :load_and_validate_record!, only: [:show, :update, :destroy]
 
   def index
     ok_render(filtered_collection)
+  end
+
+  def show
+    ok_render(@record)
   end
 
   def create

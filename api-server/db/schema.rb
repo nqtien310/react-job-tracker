@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20170828153734) do
 
   create_table "entries", force: :cascade do |t|
     t.date "date"
-    t.integer "distance_in_metre"
+    t.float "distance_in_metre"
     t.integer "time_in_second"
-    t.integer "speed"
+    t.float "speed"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

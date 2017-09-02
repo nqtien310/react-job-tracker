@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   scope :regular, Proc.new { where(role: ROLE_USER) }
 
-  has_many :entries
+  has_many :entries, dependent: :destroy
 
   def weekly_summaries
     return [] if entries.empty?

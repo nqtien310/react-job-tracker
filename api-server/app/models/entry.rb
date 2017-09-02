@@ -30,7 +30,7 @@ class Entry < ApplicationRecord
 
   #Average speed in m/s
   def set_speed
-    self.speed = (distance_in_metre / time_in_second)
+    self.speed = (distance_in_metre.to_f / time_in_second.to_f).round(2)
   end
 
   def formatted_date
