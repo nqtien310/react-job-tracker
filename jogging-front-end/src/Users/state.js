@@ -65,7 +65,7 @@ export const createUserEpic = (action$) => {
   return action$.ofType(USER_CREATE).switchMap(action =>{
     return Rx.Observable.fromPromise(
       api.post('/register', {user: action.payload})
-    ).flatMap(response => [push('/login'), setErrorMessage(null)]
+    ).flatMap(response => [push('/'), setErrorMessage(null)]
     ).catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }

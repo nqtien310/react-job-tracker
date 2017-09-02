@@ -31,19 +31,25 @@ class UsersList extends React.Component{
 
   render() {
     return (
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Email</th>
-            <th>Full Name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+      <div>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Full Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          {this.renderUsers()}
-        </tbody>
-      </table>
+          <tbody>
+            {this.renderUsers()}
+          </tbody>
+        </table>
+
+        <div className="action-footers">
+          <Link to="/users/new" className="btn btn-primary">Add</Link>
+        </div>
+      </div>
     )
   }
 }

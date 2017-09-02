@@ -18,6 +18,7 @@ export default function Router() {
       <Route exact path="/users/:userId/entries" component={UserEntries}/>
       <Route exact path="/users/:userId/edit" component={UserEdit}/>
       <Route exact path="/users/:userId/report" component={UserReport}/>
+      <Route exact path="/users/new" component={Register}/>
     </div>
   )
 }
