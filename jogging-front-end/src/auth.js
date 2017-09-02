@@ -14,6 +14,18 @@ const Auth = {
 
   isLogin: () => {
     return !!localStorage.getItem(TOKEN_KEY)
+  },
+
+  setRole: (role) => {
+    localStorage.setItem('ROLE', role)
+  },
+
+  getRole: (role) => {
+    return localStorage.getItem('ROLE')
+  },
+
+  clearRole: () => {
+    localStorage.removeItem("ROLE")
   }
 }
 

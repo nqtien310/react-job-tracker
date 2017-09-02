@@ -8,7 +8,7 @@ class TokensController < ApplicationController
 
       user = User.find_by_email(email)
       if(user && user.authenticate(password))
-        ok_render({token: Tokenizer.encode({user_id: user.id})}) and return
+        ok_render({token: Tokenizer.encode({user_id: user.id}), role: user.role}) and return
       end
     end
 
