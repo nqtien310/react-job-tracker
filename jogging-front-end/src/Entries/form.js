@@ -4,8 +4,8 @@ import { reduxForm,Field } from 'redux-form'
 import FieldsList from '../components/FieldsList'
 import Submit from '../components/Submit'
 import ErrorMessage from '../components/ErrorMessage'
-import { createEntry } from '../epics/createEntryEpic'
 import { connect } from 'react-redux'
+import { createEntry } from './state'
 
 class EntryForm extends React.Component{
   constructor(props) {
@@ -13,7 +13,7 @@ class EntryForm extends React.Component{
   }
 
   onSubmit = (params) => {
-    this.props.createEntry(this.props.match.params.userId, params)
+    this.props.createEntry(this.props.userId, params)
   }
 
   renderFields() {

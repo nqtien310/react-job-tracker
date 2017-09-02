@@ -3,7 +3,7 @@ import { reducer as formReducer } from 'redux-form'
 import { myUserReducer } from '../epics/fetchMyUserEpic'
 import errorMessageReducer from './errorMessageReducer'
 import tokenReducer from './tokenReducer'
-import {entriesReducer} from '../epics/fetchEntriesEpic'
+import {entryReducer} from '../Entries/state.js'
 import { routerReducer } from 'react-router-redux'
 
 let indexReducer = combineReducers({
@@ -11,8 +11,8 @@ let indexReducer = combineReducers({
   myUser: myUserReducer,
   token: tokenReducer,
   errorMessage: errorMessageReducer,
-  entries: entriesReducer,
-  routing: routerReducer
+  routing: routerReducer,
+  entry: entryReducer
 })
 
 export default indexReducer

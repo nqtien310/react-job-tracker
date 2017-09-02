@@ -2,9 +2,7 @@ import { combineEpics } from 'redux-observable';
 import fetchMyUserEpic from './fetchMyUserEpic'
 import { loginEpic } from '../Login/state'
 import { logoutEpic } from './logout'
-import { fetchEntriesEpic } from './fetchEntriesEpic'
-import { deleteEntryEpic } from './deleteEntryEpic'
-import { createEntryEpic } from './createEntryEpic'
+import { fetchEntriesEpic, deleteEntryEpic, createEntryEpic } from '../Entries/state'
 
 const rootEpic = combineEpics(
   fetchMyUserEpic,

@@ -10,7 +10,6 @@ export default function Template(props){
       <div id="body">
         {props.children}
       </div>
-      <Footer/>
     </div>
   )
 }

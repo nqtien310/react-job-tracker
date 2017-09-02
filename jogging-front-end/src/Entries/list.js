@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { deleteEntry } from './state'
 
 class List extends React.Component{
   constructor(props) {
@@ -7,6 +9,26 @@ class List extends React.Component{
 
   onDelete(id){
     this.props.deleteEntry(this.props.userId, id)
+  }
+
+  renderTable(){
+    return (
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Distance</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Speed</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {this.renderEntries()}
+        </tbody>
+      </table>
+    )
   }
 
   renderEntries() {
@@ -35,24 +57,16 @@ class List extends React.Component{
   }
 
   render(){
-    return (
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Distance</th>
-            <th>Time</th>
-            <th>Date</th>
-            <th>Speed</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {this.renderEntries()}
-        </tbody>
-      </table>
-    )
+    if(this.props.entries.length == 0){
+      return (<div>No Entries created</div>)
+    }else{
+      return this.renderTable()
+    }
   }
 }
 
+List = connect(null, {
+  deleteEntry
+
+})(List)
 export default List
