@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { fetchUsers } from './state'
+import { Link } from 'react-router-dom'
 
 class UsersList extends React.Component{
   componentWillMount(){
@@ -24,6 +25,8 @@ class UsersList extends React.Component{
           <td className="actions">
             <a onClick={()=> this.onDelete(user.id)} className="btn btn-danger">Delete</a>
             <a onClick={()=> this.onEdit(user.id)} className="btn btn-warning">Edit</a>
+            <Link to={`/users/${user.id}/entries`} className="btn btn-primary">Entries</Link>
+            <Link to={`/users/${user.id}/report`} className="btn btn-primary">Report</Link>
           </td>
         </tr>
       )

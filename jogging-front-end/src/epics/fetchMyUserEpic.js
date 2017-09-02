@@ -6,7 +6,7 @@ const UNSET_MY_USER         = 'UNSET_MY_USER'
 const FETCH_MY_USER         = 'FETCH_MY_USER'
 
 //Reducers
-export function myUserReducer(state={}, action){
+export function myUserReducer(state=null, action){
   switch(action.type){
     case DONE_FETCHING_MY_USER: {
       return action.payload.data

@@ -9,7 +9,7 @@ class Report extends React.Component{
   }
 
   render(){
-    if(this.props.myUser.id) {
+    if(this.props.myUser) {
       return (
         <ReportList userId={this.props.myUser.id} />
       )
