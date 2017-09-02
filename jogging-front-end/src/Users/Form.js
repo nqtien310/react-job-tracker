@@ -12,7 +12,7 @@ import ErrorMessage from '../components/ErrorMessage'
 function RegisterForm(props) {
   return (
     <Template>
-      <form onSubmit={props.handleSubmit(props.createUser)}>
+      <form onSubmit={props.handleSubmit(props.onSubmit)}>
         <ErrorMessage />
         <FieldsList fields={props.fields} focusOn="email"/>
         <Submit label="Register" />
@@ -28,7 +28,7 @@ RegisterForm = reduxForm({
     {name: "email", label: "Email", type:"email", component: "input"},
     {name: "full_name", label: "Full Name", type:"text", component: "input"},
     {name: "password", label: "Password", type:"password", component: "input"},
-    {name: "passwordConfirmation", label: "Confirm", type:"password", component: "input"},
+    {name: "password_confirmation", label: "Confirm", type:"password", component: "input"},
     {name: "role", label: "Role", type:"radio", component: "input", values: ["admin", "manager","user"]}
   ]
 })(RegisterForm)

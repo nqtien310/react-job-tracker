@@ -1,22 +1,26 @@
 import React from 'react';
 import Template from '../Template'
 import Form from './Form'
-import { fetchUser } from './state'
+import { fetchUser, updateUser } from './state'
 import { connect } from 'react-redux'
 
 class EditForm extends React.Component {
   constructor(props){
     super(props)
+    this.userId = this.props.match.params.userId
   }
 
   componentWillMount() {
-    let userId = this.props.match.params.userId
-    this.props.fetchUser(userId)
+    this.props.fetchUser(this.userId)
+  }
+
+  onSubmit = (params) => {
+    this.props.updateUser(this.userId, params)
   }
 
   render() {
     return (
-      <Form initialValues={this.props.selectedUser}/>
+      <Form onSubmit={this.onSubmit} initialValues={this.props.selectedUser}/>
     )
   }
 }
@@ -28,5 +32,6 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps, {
-  fetchUser
+  fetchUser,
+  updateUser
 })(EditForm)
