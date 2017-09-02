@@ -6,6 +6,10 @@ import Submit from '../components/Submit'
 import ErrorMessage from '../components/ErrorMessage'
 import { connect } from 'react-redux'
 import { createEntry, updateEntry } from './state'
+import DatePicker from 'react-datepicker'
+import moment from 'moment'
+import 'react-datepicker/dist/react-datepicker.css'
+import renderDatePicker from '../components/RenderDatePicker'
 
 class EntryForm extends React.Component{
   constructor(props) {
@@ -23,32 +27,26 @@ class EntryForm extends React.Component{
 
   renderFields() {
     return this.props.fields.map( (f) => {
-      return (<td key={f.name}>
+      return (<div className="field-container" key={f.name}>
+        <b> {f.label} </b>
+        <br/>
         <Field autoFocus={f.name=="distance_in_metre"} className="form-control"
           id={f.name}
           name={f.name}
           component={f.component}
           type={f.type}
         />
-      </td>)
+      </div>)
     })
   }
 
   render() {
     return (
       <form id="entry-form" onSubmit={this.props.handleSubmit(this.onSubmit)}>
-        <table className="table">
-          <tbody>
-            <tr>
-              {this.renderFields()}
-              <td></td>
-              <td>
-                <Submit label="Save" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
+        <div className="row">
+          {this.renderFields()}
+          <a onClick={this.props.handleSubmit(this.onSubmit)} className="btn btn-primary">Save</a>
+        </div>
       </form>
     )
   }
@@ -58,9 +56,9 @@ EntryForm = reduxForm({
   form: 'entry',
   enableReinitialize: true,
   fields: [
-    {name: "distance_in_metre", label: "Distance (m)", type:"text", component: "input"},
-    {name: "time_in_second", label: "Time (s)", type:"text", component: "input"},
-    {name: "date", label: "Date", type:"text", component: "input"}
+    {name: "distance_in_metre", label: "Distance (m)", type:"number", component: "input"},
+    {name: "time_in_second", label: "Time (s)", type:"number", component: "input"},
+    {name: "date", label: "Date", type:"text", component: renderDatePicker}
   ]
 })(EntryForm)
 
