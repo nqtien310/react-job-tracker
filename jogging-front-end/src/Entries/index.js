@@ -17,7 +17,10 @@ class Entries extends React.Component{
         <ErrorMessage />
         <List userId={this.props.userId} entries={this.props.entry.list}/>
         {this.props.entry.form.action ? <Form initialValues={this.props.entry.form.editing} userId={this.props.userId}/> : null}
-        <a onClick={this.props.showCreateForm} className="btn btn-primary">Add</a>
+
+        <div className="action-footers">
+          <a onClick={this.props.showCreateForm} className="btn btn-primary">Add</a>
+        </div>
       </div>
     )
   }

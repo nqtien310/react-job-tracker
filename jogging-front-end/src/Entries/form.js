@@ -28,9 +28,8 @@ class EntryForm extends React.Component{
   renderFields() {
     return this.props.fields.map( (f) => {
       return (<div className="field-container" key={f.name}>
-        <b> {f.label} </b>
-        <br/>
         <Field autoFocus={f.name=="distance_in_metre"} className="form-control"
+          placeholder={f.label}
           id={f.name}
           name={f.name}
           component={f.component}
@@ -43,7 +42,7 @@ class EntryForm extends React.Component{
   render() {
     return (
       <form id="entry-form" onSubmit={this.props.handleSubmit(this.onSubmit)}>
-        <div className="row">
+        <div className="display-inline">
           {this.renderFields()}
           <a onClick={this.props.handleSubmit(this.onSubmit)} className="btn btn-primary">Save</a>
         </div>

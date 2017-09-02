@@ -41,7 +41,8 @@ class renderDatePicker extends React.Component {
       <div>
         <DatePicker
           {...input}
-          placeholder={placeholder}
+          className="form-control"
+          placeholderText={placeholder}
           dateFormat="YYYY-MM-DD"
           selected={input.value ? moment(input.value, 'YYYY-MM-DD') : null}
           onChange={this.handleChange}
