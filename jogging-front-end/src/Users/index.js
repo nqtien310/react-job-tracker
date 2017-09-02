@@ -24,7 +24,7 @@ class UsersList extends React.Component{
           <td> {user.full_name} </td>
           <td className="actions">
             <a onClick={()=> this.onDelete(user.id)} className="btn btn-danger">Delete</a>
-            <a onClick={()=> this.onEdit(user.id)} className="btn btn-warning">Edit</a>
+            <Link to={`/users/${user.id}/edit`} className="btn btn-warning">Edit</Link>
             <Link to={`/users/${user.id}/entries`} className="btn btn-primary">Entries</Link>
             <Link to={`/users/${user.id}/report`} className="btn btn-primary">Report</Link>
           </td>

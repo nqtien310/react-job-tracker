@@ -6,7 +6,7 @@ import tokenReducer from './tokenReducer'
 import {entryReducer} from '../Entries/state.js'
 import { routerReducer } from 'react-router-redux'
 import { reportReducer } from '../ReportList/state.js'
-import { userReducer } from '../UsersList/state.js'
+import { userReducer } from '../Users/state.js'
 
 let indexReducer = combineReducers({
   form: formReducer,

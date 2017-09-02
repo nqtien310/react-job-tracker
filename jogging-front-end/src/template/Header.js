@@ -10,7 +10,15 @@ class Header extends React.Component{
   }
 
   render(){
-    if(this.props.myUser){
+    if(!this.props.myUser){
+      return (
+        <NavBar>
+          <NavLink to="/" label="Home"/>
+          <NavLink to="/login" label="Login"/>
+          <NavLink to="/register" label="Register"/>
+        </NavBar>
+      )
+    }else if(this.props.myUser.role == 'user'){
       return (
         <NavBar>
           <NavLink to="/" label="Home"/>
@@ -23,11 +31,15 @@ class Header extends React.Component{
           </li>
         </NavBar>
       )
-    }else{
+    }else if(this.props.myUser.role == 'admin'){
       return (
         <NavBar>
           <NavLink to="/" label="Home"/>
-          <NavLink to="/login" label="Login"/>
+          <li className={"nav-item"}>
+            <a onClick={this.props.logout} className="nav-link">
+              Logout {this.props.myUser.email}
+            </a>
+          </li>
         </NavBar>
       )
     }
