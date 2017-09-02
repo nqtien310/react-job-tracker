@@ -3,6 +3,7 @@ import fetchMyUserEpic from './fetchMyUserEpic'
 import { loginEpic } from '../Login/state'
 import { logoutEpic } from './logout'
 import { updateEntryEpic, fetchEntriesEpic, deleteEntryEpic, createEntryEpic } from '../Entries/state'
+import { fetchReportsEpic } from '../ReportList/state'
 
 const rootEpic = combineEpics(
   fetchMyUserEpic,
@@ -11,7 +12,8 @@ const rootEpic = combineEpics(
   fetchEntriesEpic,
   deleteEntryEpic,
   createEntryEpic,
-  updateEntryEpic
+  updateEntryEpic,
+  fetchReportsEpic
 );
 
 export default rootEpic

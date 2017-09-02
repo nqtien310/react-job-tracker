@@ -1,6 +1,5 @@
 import { fetchMyUser } from '../epics/fetchMyUserEpic'
 import Auth from '../auth'
-import 'rxjs/add/operator/switchMap';
 import Rx from 'rxjs/Rx'
 import api from '../api'
 import setErrorMessage from '../actions/setErrorMessage.js'

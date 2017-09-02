@@ -14,6 +14,7 @@ class Header extends React.Component{
       return (
         <NavBar>
           <NavLink to="/" label="Home"/>
+          <NavLink to="/report" label="Report"/>
 
           <li className={"nav-item"}>
             <a onClick={this.props.logout} className="nav-link">
