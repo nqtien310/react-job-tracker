@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { deleteEntry } from './state'
+import { deleteEntry, showEditForm } from './state'
 
 class List extends React.Component{
   constructor(props) {
@@ -9,6 +9,11 @@ class List extends React.Component{
 
   onDelete(id){
     this.props.deleteEntry(this.props.userId, id)
+  }
+
+  onEdit(id){
+    let entry = this.props.entries.find((e) => e.id == id)
+    this.props.showEditForm(entry)
   }
 
   renderTable(){
@@ -66,7 +71,7 @@ class List extends React.Component{
 }
 
 List = connect(null, {
-  deleteEntry
-
+  deleteEntry,
+  showEditForm
 })(List)
 export default List

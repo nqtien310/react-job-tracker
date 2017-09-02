@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { deleteEntry } from './state'
+import { deleteEntry, showCreateForm } from './state'
 import List from './list'
 import Form from './form'
 import './index.css'
@@ -8,20 +8,14 @@ import './index.css'
 class Entries extends React.Component{
   constructor(props) {
     super(props)
-    this.state = {
-      showForm: false
-    }
-  }
-  showForm = () => {
-    this.setState({showForm: true})
   }
 
   render(){
     return (
       <div>
-        <a onClick={this.showForm} className="btn btn-primary">Add</a>
+        <a onClick={this.props.showCreateForm} className="btn btn-primary">Add</a>
         <List userId={this.props.userId} entries={this.props.entry.list}/>
-        {this.state.showForm ? <Form userId={this.props.userId}/> : null}
+        {this.props.entry.form.action ? <Form initialValues={this.props.entry.form.editing} userId={this.props.userId}/> : null}
       </div>
     )
   }
@@ -33,5 +27,6 @@ function mapStateToProps(state){
   }
 }
 export default connect(mapStateToProps, {
-  deleteEntry
+  deleteEntry,
+  showCreateForm
 })(Entries)

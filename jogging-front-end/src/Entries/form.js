@@ -5,7 +5,7 @@ import FieldsList from '../components/FieldsList'
 import Submit from '../components/Submit'
 import ErrorMessage from '../components/ErrorMessage'
 import { connect } from 'react-redux'
-import { createEntry } from './state'
+import { createEntry, updateEntry } from './state'
 
 class EntryForm extends React.Component{
   constructor(props) {
@@ -13,12 +13,17 @@ class EntryForm extends React.Component{
   }
 
   onSubmit = (params) => {
-    this.props.createEntry(this.props.userId, params)
+    if(this.props.initialValues){
+      this.props.updateEntry(this.props.userId
+        , this.props.initialValues.id, params)
+    } else{
+      this.props.createEntry(this.props.userId, params)
+    }
   }
 
   renderFields() {
     return this.props.fields.map( (f) => {
-      return (<td>
+      return (<td key={f.name}>
         <Field autoFocus={f.name=="distance_in_metre"} className="form-control"
           id={f.name}
           name={f.name}
@@ -51,6 +56,7 @@ class EntryForm extends React.Component{
 
 EntryForm = reduxForm({
   form: 'entry',
+  enableReinitialize: true,
   fields: [
     {name: "distance_in_metre", label: "Distance (m)", type:"text", component: "input"},
     {name: "time_in_second", label: "Time (s)", type:"text", component: "input"},
@@ -59,7 +65,8 @@ EntryForm = reduxForm({
 })(EntryForm)
 
 EntryForm = connect(null, {
-  createEntry
+  createEntry,
+  updateEntry
 })(EntryForm)
 
 export default EntryForm
