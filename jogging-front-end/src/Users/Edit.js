@@ -1,5 +1,4 @@
 import React from 'react';
-import Template from '../Template'
 import Form from './Form'
 import { fetchUser, updateUser } from './state'
 import { connect } from 'react-redux'

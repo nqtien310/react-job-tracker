@@ -1,10 +1,12 @@
 import React from 'react';
-import Template from '../Template'
 import Form from '../Users/Form'
 import { createUser } from '../Users/state'
+import { connect } from 'react-redux'
 
-export default function RegisterForm(props) {
+function RegisterForm(props) {
   return (
-    <Form onSubmit={this.props.createUser}/>
+    <Form onSubmit={props.createUser}/>
   )
 }
+
+export default connect(null, {createUser})(RegisterForm)

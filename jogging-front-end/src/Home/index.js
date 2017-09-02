@@ -5,28 +5,20 @@ import NonLoginHome from './NonLoginHome'
 import RegularUserHome from '../RegularUser/Home'
 import AdminUserHome from '../AdminUser/Home'
 
-class Home extends React.Component{
-  constructor(props){
-    super(props)
-  }
-
-  renderHomeAccordingly(){
-    if(!this.props.myUser) {
+function Home(props) {
+  function renderHomeAccordingly(){
+    if(!props.myUser) {
       return <NonLoginHome/>
-    }else if(this.props.myUser.role == 'user') {
-      return <RegularUserHome myUser={this.props.myUser}/>
-    }else if(this.props.myUser.role == 'admin') {
-      return <AdminUserHome myUser={this.props.myUser}/>
+    }else if(props.myUser.role === 'user') {
+      return <RegularUserHome myUser={props.myUser}/>
+    }else if(props.myUser.role === 'admin') {
+      return <AdminUserHome myUser={props.myUser}/>
     }
   }
 
-  render(){
-    return (
-      <Template>
-        {this.renderHomeAccordingly()}
-      </Template>
-    )
-  }
+  return (
+    <Template> {renderHomeAccordingly()} </Template>
+  )
 }
 
 function mapStateToProps(state){

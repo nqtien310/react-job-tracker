@@ -14,9 +14,9 @@ class Index extends React.Component{
   }
 
   renderReports() {
-    return this.props.reports.map(report => {
+    return this.props.reports.map((report,index) => {
       return (
-        <tr>
+        <tr key={index}>
           <td> {report.start_date} </td>
           <td> {report.end_date} </td>
           <td> {report.distance_in_metre} </td>
@@ -29,13 +29,17 @@ class Index extends React.Component{
   _render() {
     return (
       <table className="table">
-        <tr>
-          <th> Start </th>
-          <th> End </th>
-          <th> Total distance in metre </th>
-          <th> Average speed(m/s) </th>
-        </tr>
-        {this.renderReports()}
+        <thead>
+          <tr>
+            <th> Start </th>
+            <th> End </th>
+            <th> Total distance in metre </th>
+            <th> Average speed(m/s) </th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.renderReports()}
+        </tbody>
       </table>
     )
   }

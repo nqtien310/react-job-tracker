@@ -1,22 +1,13 @@
 import React from 'react';
-import Template from '../Template'
 import { connect } from 'react-redux'
 import ReportList from '../ReportList'
 
-class Report extends React.Component{
-  constructor(props){
-    super(props)
-  }
-
-  render(){
-    if(this.props.myUser) {
-      return (
-        <ReportList userId={this.props.myUser.id} />
-      )
-    }else {
-      return null
-    }
-  }
+function Report(props){
+  return (
+    props.myUser ?
+      <ReportList userId={props.myUser.id} />
+      : null
+  )
 }
 
 function mapStateToProps(state){

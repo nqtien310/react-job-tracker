@@ -1,7 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux'
 import { store, browserHistory } from './store'
-import { BrowserRouter } from 'react-router-dom'
 import { Router } from 'react-router'
 import { fetchMyUser } from './epics/fetchMyUserEpic'
 import auth from './auth'
@@ -19,7 +18,6 @@ class App extends React.Component {
   }
 
   render() {
-
     return (
       <Provider store={store}>
         <Router history={browserHistory}>
