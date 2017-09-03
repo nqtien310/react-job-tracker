@@ -3,6 +3,7 @@ FactoryGirl.define do
     sequence(:full_name) { |n| "conor mcgregor - #{n}" }
     sequence(:email)    { |n| "conor#{n}@mcgregor.com" }
     password "secret1234"
+    password_confirmation "secret1234"
     role User::ROLE_USER
 
     factory :admin do

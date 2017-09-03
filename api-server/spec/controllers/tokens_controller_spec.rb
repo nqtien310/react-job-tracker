@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe TokensController, type: :controller do
-  let!(:user) { create(:user, password: 'iamright') }
+  let!(:user) { create(:user, password: 'iamright', password_confirmation: 'iamright') }
 
   describe 'POST create' do
     before do

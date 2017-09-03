@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_secure_password
   scope :regular, Proc.new { where(role: ROLE_USER) }
   before_validation :assign_default_role!, if: :role_omitted?
+  validates :password, presence: true, on: :create
+  validates :password_confirmation, presence: true, on: :create
 
   has_many :entries, dependent: :destroy
 
