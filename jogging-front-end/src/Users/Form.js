@@ -8,30 +8,37 @@ import FormGroupAlignedRight from '../components/FormGroupAlignedRight'
 import { createUser } from './state'
 import { connect } from 'react-redux'
 import ErrorMessage from '../components/ErrorMessage'
+import Form from '../components/Form'
 
-function RegisterForm(props) {
-  let fields = [
-    {name: "email", label: "Email", type:"email", component: "input"},
-    {name: "full_name", label: "Full Name", type:"text", component: "input"},
-    {name: "password", label: "Password", type:"password", component: "input"},
-    {name: "password_confirmation", label: "Confirm", type:"password", component: "input"}
-  ]
+class RegisterForm extends Form{
+  fields() {
+    let fields = [
+      {name: "email", label: "Email", type:"email", component: "input"},
+      {name: "full_name", label: "Full Name", type:"text", component: "input"},
+      {name: "password", label: "Password", type:"password", component: "input"},
+      {name: "password_confirmation", label: "Confirm", type:"password", component: "input"}
+    ]
 
-  if(props.allowRoleEdit) {
-    fields.push(
-      {name: "role", label: "Role", type:"radio", component: "input", values: ["admin", "manager","user"]}
-    )
+    if(this.props.allowRoleEdit) {
+      fields.push(
+        {name: "role", label: "Role", type:"radio", component: "input", values: ["admin", "manager","user"]}
+      )
+    }
+
+    return fields
   }
 
-  return (
-    <Template>
-      <form onSubmit={props.handleSubmit(props.onSubmit)}>
-        <ErrorMessage />
-        <FieldsList fields={fields} focusOn="email"/>
-        <Submit label={props.submitLabel} />
-      </form>
-    </Template>
-  )
+  render() {
+    return (
+      <Template>
+        <form onSubmit={this.props.handleSubmit(this.props.onSubmit)}>
+          <ErrorMessage />
+          <FieldsList fields={this.fields()} focusOn="email"/>
+          <Submit label={this.props.submitLabel} />
+        </form>
+      </Template>
+    )
+  }
 }
 
 RegisterForm = reduxForm({

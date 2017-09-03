@@ -8,12 +8,9 @@ import { connect } from 'react-redux'
 import { createEntry, updateEntry } from './state'
 import DatePicker from 'react-datepicker'
 import renderDatePicker from '../components/RenderDatePicker'
+import Form from '../components/Form'
 
-class EntryForm extends React.Component{
-  constructor(props) {
-    super(props)
-  }
-
+class EntryForm extends Form{
   onSubmit = (params) => {
     if(this.props.initialValues){
       this.props.updateEntry(this.props.userId

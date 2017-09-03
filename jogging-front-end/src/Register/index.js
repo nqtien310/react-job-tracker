@@ -6,9 +6,9 @@ import { connect } from 'react-redux'
 function RegisterForm(props) {
   return (
     <Form
-      submitLabel="Register"
-      allowRoleEdit={true}
-      onSubmit={props.createUser}/>
+    submitLabel="Register"
+    allowRoleEdit={true}
+    onSubmit={props.createUser}/>
   )
 }
 
