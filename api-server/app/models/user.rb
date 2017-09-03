@@ -5,12 +5,13 @@ class User < ApplicationRecord
     ROLE_ADMIN   = 'admin'
   ]
 
+  DEFAULT_ROLE = ROLE_USER
+
   validates :email, presence: true, uniqueness: true
   validates :full_name, presence: true
-  validates :role, presence: true, inclusion: {in:  ROLES}
   has_secure_password
-
   scope :regular, Proc.new { where(role: ROLE_USER) }
+  before_validation :assign_default_role!, if: :role_omitted?
 
   has_many :entries, dependent: :destroy
 
@@ -36,5 +37,15 @@ class User < ApplicationRecord
       start_date = start_date.next_week
     end
     output
+  end
+
+  private
+
+  def role_omitted?
+    role.nil?
+  end
+
+  def assign_default_role!
+    self.role = DEFAULT_ROLE
   end
 end

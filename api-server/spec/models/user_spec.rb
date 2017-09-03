@@ -6,8 +6,6 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of(:full_name) }
   it { should validate_confirmation_of(:password) }
   it { should have_secure_password }
-  it { should validate_presence_of(:role) }
-  it { should validate_inclusion_of(:role).in_array(['user', 'manager', 'admin']) }
   it { should have_many :entries }
 
   describe '#weekly_summaries' do
@@ -61,6 +59,19 @@ RSpec.describe User, type: :model do
       it 'returns nil' do
         expect(user.weekly_summaries).to be_empty
       end
+    end
+  end
+
+  context 'when role is left blank' do
+    it 'should assign default_role' do
+      user = User.create(
+        email:'tien@gmail.com',
+        full_name: 'tien',
+        password: 'secure123',
+        password_confirmation: 'secure123'
+      )
+
+      expect(user.reload.role).to eq User::DEFAULT_ROLE
     end
   end
 end
