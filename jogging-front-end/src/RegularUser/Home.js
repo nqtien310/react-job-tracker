@@ -15,7 +15,7 @@ class Home extends React.Component{
   render() {
     return (
       <div>
-        <Entries userId={this.props.myUser.id}/>
+        <Entries reportLink="/report" userId={this.props.myUser.id}/>
       </div>
     )
   }

@@ -23,7 +23,7 @@ class FieldsList extends React.Component {
         return (
           <div key={index} className="form-group row">
             <label className="col-sm-3 col-form-label">{field.label}</label>
-            <div className="col-sm-9">
+            <div className="col-sm-9 radio-btns-group">
               {this.renderRadioFields(field.name, field.values)}
             </div>
           </div>

@@ -8,6 +8,7 @@ import './index.css'
 import DatePicker from 'react-datepicker'
 import { Field } from 'redux-form'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
@@ -56,6 +57,7 @@ class Entries extends React.Component{
             selected={this.state.from} />
 
           <DatePicker placeholderText="To.."
+            reportLink={this.props.reportLink}
             className="form-control date-filter"
             onChange={date => this.handleChange("to", date)}
             selected={this.state.to} />
@@ -65,6 +67,7 @@ class Entries extends React.Component{
         <List userId={this.props.userId} entries={entries}/>
         {this.props.entry.form.action ? <Form initialValues={this.props.entry.form.editing} userId={this.props.userId}/> : null}
 
+        <Link to={this.props.reportLink}>Report by week</Link>
         <div className="action-footers">
           <a onClick={this.props.showCreateForm} className="btn btn-primary">Add</a>
         </div>

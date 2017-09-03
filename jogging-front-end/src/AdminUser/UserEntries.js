@@ -7,16 +7,18 @@ import Template from '../Template'
 class Home extends React.Component{
   constructor(props) {
     super(props)
+    this.userId = this.props.match.params.userId
   }
 
   componentWillMount(){
     this.props.fetchEntries(this.props.match.params.userId)
   }
 
+
   render() {
     return (
       <Template>
-        <Entries userId={this.props.match.params.userId}/>
+        <Entries reportLink={`/users/${this.userId}/report`} userId={this.userId}/>
       </Template>
     )
   }

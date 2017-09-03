@@ -8,7 +8,6 @@ class Form extends React.Component {
   }
 
   componentWillUnmount(){
-    console.log("???????????????")
     this.context.store.dispatch(setErrorMessage(null))
   }
 }
