@@ -16,7 +16,7 @@ export const loginEpic = (action$) => {
   return action$.ofType(LOGIN).switchMap(action =>{
     return Rx.Observable.fromPromise(
       api.post('login', {user: action.payload})
-    ).flatMap(response => [setToken(response), fetchMyUser(), push('/')]
+    ).flatMap(response => [setToken(response), fetchMyUser(), push('/'), setErrorMessage(null)]
     ).catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }
