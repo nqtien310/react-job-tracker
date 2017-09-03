@@ -29,6 +29,6 @@ export function successMessageReducer(state=null, action){
 
 export default function successMessageEpic(action$){
   return action$.ofType(SET_SUCCESS_MESSAGE).switchMap( action =>  {
-    return Rx.Observable.of(clearSuccessMessage()).delay(5000)
+    return Rx.Observable.of(clearSuccessMessage()).delay(2500)
   })
 }
