@@ -19,7 +19,11 @@ class EditForm extends React.Component {
 
   render() {
     return (
-      <Form onSubmit={this.onSubmit} initialValues={this.props.selectedUser}/>
+      <Form
+        submitLabel="Update"
+        allowRoleEdit={false}
+        onSubmit={this.onSubmit}
+        initialValues={this.props.selectedUser}/>
     )
   }
 }

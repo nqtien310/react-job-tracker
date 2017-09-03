@@ -3,13 +3,13 @@ import Form from '../Users/Form'
 import { createUser } from '../Users/state'
 import { connect } from 'react-redux'
 
-function RegisterForm(props) {
+function NewForm(props) {
   return (
     <Form
-      submitLabel="Register"
-      allowRoleEdit={true}
+      submitLabel="Create"
+      allowRoleEdit={false}
       onSubmit={props.createUser}/>
   )
 }
 
-export default connect(null, {createUser})(RegisterForm)
+export default connect(null, {createUser})(NewForm)

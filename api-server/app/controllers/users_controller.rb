@@ -15,7 +15,7 @@ class UsersController < RestfulController
   end
 
   def collection
-    User.all
+    @collection ||= User.regular
   end
 
   def model_name

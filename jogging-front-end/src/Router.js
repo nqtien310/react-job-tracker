@@ -7,6 +7,7 @@ import Register from './Register'
 import UserEntries from './AdminUser/UserEntries'
 import UserReport from './AdminUser/UserReport'
 import UserEdit from './Users/Edit'
+import UserNew from './Users/New'
 import PrivateRoute from './PrivateRoute'
 
 export default function Router() {
@@ -20,7 +21,7 @@ export default function Router() {
       <PrivateRoute roles={['admin']} exact path="/users/:userId/report" component={UserReport}/>
 
       <PrivateRoute roles={['admin', 'manager']} exact path="/users/:userId/edit" component={UserEdit}/>
-      <PrivateRoute roles={['admin', 'manager']} exact path="/users/new" component={Register}/>
+      <PrivateRoute roles={['admin', 'manager']} exact path="/users/new" component={UserNew}/>
     </div>
   )
 }
