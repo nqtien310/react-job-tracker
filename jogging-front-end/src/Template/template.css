@@ -28,3 +28,7 @@
 form label {
   cursor: pointer !important;
 }
+
+.top-actions-container {
+  margin-bottom: 20px;
+}

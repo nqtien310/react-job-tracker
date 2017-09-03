@@ -9,7 +9,6 @@ import DatePicker from 'react-datepicker'
 import { Field } from 'redux-form'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
-
 import 'react-datepicker/dist/react-datepicker.css'
 
 class Entries extends React.Component{
