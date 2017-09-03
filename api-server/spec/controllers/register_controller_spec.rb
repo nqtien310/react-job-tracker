@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe RegisterController, type: :controller do
   describe 'POST create' do
     context 'invalid params' do
-      let(:expected_message) { ["Email can't be blank"] }
+      let(:expected_message) { "Email can't be blank" }
       let(:params) { { user: attributes_for(:user, email: nil) } }
 
       it 'returns error message' do

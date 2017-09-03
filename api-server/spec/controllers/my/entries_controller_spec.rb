@@ -9,9 +9,7 @@ describe My::EntriesController do
     let(:method) { :get }
     let(:path)   { :index }
     let(:params) { {} }
-    let(:expected) do
-      [entry.slice('id', 'time_in_second', 'distance_in_metre', 'formatted_date', 'speed')]
-    end
+    let(:expected) { [entry.serialized_attrs] }
 
     it_behaves_like 'authenticable endpoint'
   end

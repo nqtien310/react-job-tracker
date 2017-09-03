@@ -57,7 +57,7 @@ describe User::EntriesController do
        entry: {distance_in_metre: 37000, time_in_second: 1000}
       }
     end
-    let(:expected_error) { ["Date can't be blank"] }
+    let(:expected_error) { "Date can't be blank" }
     let(:expected_success) {{"message"=>"Create entry successfully"}}
     it_behaves_like 'only accessible by Admin'
 
