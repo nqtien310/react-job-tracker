@@ -3,6 +3,7 @@ import { push } from 'react-router-redux'
 import Rx from 'rxjs/Rx'
 import api from '../api'
 import setErrorMessage from '../actions/setErrorMessage'
+import { setSuccessMessage } from '../epics/successMessageEpic'
 
 export const USERS_FETCH = 'USERS_FETCH'
 export const USER_FETCH = 'USER_FETCH'
@@ -65,7 +66,7 @@ export const createUserEpic = (action$) => {
   return action$.ofType(USER_CREATE).switchMap(action =>{
     return Rx.Observable.fromPromise(
       api.post('/register', {user: action.payload})
-    ).flatMap(response => [push('/'), setErrorMessage(null)]
+    ).flatMap(response => [push('/'), setErrorMessage(null), setSuccessMessage("User created")]
     ).catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }
@@ -74,7 +75,7 @@ export const updateUserEpic = (action$) => {
   return action$.ofType(USER_UPDATE).switchMap(action =>{
     return Rx.Observable.fromPromise(
       api.put(`/users/${action.payload.userId}`, {user: action.payload.params})
-    ).flatMap(response => [push('/'), setErrorMessage(null)]
+    ).flatMap(response => [push('/'), setErrorMessage(null), setSuccessMessage("User updated")]
     ).catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }
@@ -83,7 +84,7 @@ export const deleteUserEpic = (action$) => {
   return action$.ofType(USER_DELETE).switchMap(action =>{
     return Rx.Observable.fromPromise(
       api.delete(`/users/${action.payload}`)
-    ).map(response => fetchUsers()
+    ).flatMap(response => [fetchUsers(), setSuccessMessage("User deleted")]
     ).catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }

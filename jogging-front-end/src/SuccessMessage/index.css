@@ -1,0 +1,9 @@
+@keyframes example {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+#success-message {
+  animation-name: example;
+  animation-duration: 1s;
+}

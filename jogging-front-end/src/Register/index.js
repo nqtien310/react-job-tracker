@@ -2,6 +2,7 @@ import React from 'react';
 import Form from '../Users/Form'
 import { createUser } from '../Users/state'
 import { connect } from 'react-redux'
+import { setSuccessMessage } from '../epics/successMessageEpic'
 
 function RegisterForm(props) {
   return (
@@ -12,4 +13,4 @@ function RegisterForm(props) {
   )
 }
 
-export default connect(null, {createUser})(RegisterForm)
+export default connect(null, {createUser, setSuccessMessage})(RegisterForm)

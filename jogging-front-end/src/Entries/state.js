@@ -4,6 +4,7 @@ import { combineReducers } from 'redux'
 import { push } from 'react-router-redux'
 import setErrorMessage from '../actions/setErrorMessage.js'
 import {reset} from 'redux-form'
+import { setSuccessMessage } from '../epics/successMessageEpic'
 //constants
 export const ENTRY_FORM_CREATE = 'ENTRY_FORM_CREATE'
 export const ENTRY_FORM_EDIT   = 'ENTRY_FORM_EDIT'
@@ -93,7 +94,7 @@ export const deleteEntryEpic = (action$) => {
   return action$.ofType(ENTRY_DELETE).switchMap( action => {
     return Rx.Observable.fromPromise(
       api.delete(`users/${action.payload.userId}/entries/${action.payload.id}`)
-    ).flatMap(response => [fetchEntries(action.payload.userId), hideForm(), setErrorMessage(null)])
+    ).flatMap(response => [fetchEntries(action.payload.userId), hideForm(), setErrorMessage(null), setSuccessMessage("Entry deleted")])
   })
 }
 
@@ -101,7 +102,7 @@ export const updateEntryEpic = (action$) => {
   return action$.ofType(ENTRY_UPDATE).switchMap( action => {
     return Rx.Observable.fromPromise(
       api.put(`users/${action.payload.userId}/entries/${action.payload.id}`, action.payload.params)
-    ).flatMap(response => [fetchEntries(action.payload.userId), hideForm(), setErrorMessage(null)])
+    ).flatMap(response => [fetchEntries(action.payload.userId), hideForm(), setErrorMessage(null), setSuccessMessage("Update entry successfully")])
     .catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }
@@ -118,7 +119,7 @@ export const createEntryEpic = (action$) => {
   return action$.ofType(ENTRY_CREATE).switchMap( action => {
     return Rx.Observable.fromPromise(
       api.post(`users/${action.payload.userId}/entries`, action.payload.params)
-    ).flatMap(() => [fetchEntries(action.payload.userId), hideForm(), setErrorMessage(null)]
+    ).flatMap(() => [fetchEntries(action.payload.userId), hideForm(), setErrorMessage(null), setSuccessMessage("Create new entry successfully")]
     ).catch(error => Rx.Observable.of(setErrorMessage(error)))
   })
 }

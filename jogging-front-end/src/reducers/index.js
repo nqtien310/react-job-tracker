@@ -7,6 +7,7 @@ import {entryReducer} from '../Entries/state.js'
 import { routerReducer } from 'react-router-redux'
 import { reportReducer } from '../ReportList/state.js'
 import { userReducer } from '../Users/state.js'
+import { successMessageReducer } from '../epics/successMessageEpic'
 
 let indexReducer = combineReducers({
   form: formReducer,
@@ -16,7 +17,8 @@ let indexReducer = combineReducers({
   routing: routerReducer,
   entry: entryReducer,
   report: reportReducer,
-  user: userReducer
+  user: userReducer,
+  successMessage: successMessageReducer
 })
 
 export default indexReducer

@@ -43,27 +43,38 @@ class UsersList extends React.Component{
   }
 
   render() {
-    return (
-      <div>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Email</th>
-              <th>Full Name</th>
-              <th>Action</th>
-            </tr>
-          </thead>
+    if(this.props.users.length == 0){
+      return (
+        <div> <div> No users created </div>
 
-          <tbody>
-            {this.renderUsers()}
-          </tbody>
-        </table>
-
-        <div className="action-footers">
-          <Link to="/users/new" className="btn btn-primary">Add</Link>
+          <div className="action-footers">
+            <Link to="/users/new" className="btn btn-primary">Add</Link>
+          </div>
         </div>
-      </div>
-    )
+      )
+    }else {
+      return (
+        <div>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {this.renderUsers()}
+            </tbody>
+          </table>
+
+          <div className="action-footers">
+            <Link to="/users/new" className="btn btn-primary">Add</Link>
+          </div>
+        </div>
+      )
+    }
   }
 }
 

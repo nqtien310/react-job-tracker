@@ -5,6 +5,7 @@ import { logoutEpic } from './logout'
 import { updateEntryEpic, fetchEntriesEpic, deleteEntryEpic, createEntryEpic } from '../Entries/state'
 import { fetchReportsEpic } from '../ReportList/state'
 import { deleteUserEpic, updateUserEpic, fetchUserEpic, createUserEpic, fetchUsersEpic } from '../Users/state'
+import successMessageEpic from './successMessageEpic.js'
 
 const rootEpic = combineEpics(
   fetchMyUserEpic,
@@ -19,7 +20,8 @@ const rootEpic = combineEpics(
   createUserEpic,
   fetchUserEpic,
   updateUserEpic,
-  deleteUserEpic
+  deleteUserEpic,
+  successMessageEpic
 );
 
 export default rootEpic

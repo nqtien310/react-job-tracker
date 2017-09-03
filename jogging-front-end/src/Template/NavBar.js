@@ -1,6 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
-export default function NavBar(props) {
+function NavBar(props) {
   return (
     <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,3 +17,11 @@ export default function NavBar(props) {
     </nav>
   )
 }
+
+function mapStateToProps(state){
+  return {
+    successMessage: state.successMessage
+  }
+}
+
+export default connect(mapStateToProps)(NavBar)
