@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register Form 1`] = `
+<div>
+  <nav
+    className="navbar navbar-toggleable-md navbar-inverse bg-inverse"
+  >
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler navbar-toggler-right"
+      data-target="#navbarSupportedContent"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <a
+      className="navbar-brand"
+      href="#"
+    >
+      Navbar
+    </a>
+    <div
+      className="collapse navbar-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul
+        className="navbar-nav mr-auto"
+      >
+        <li
+          className="nav-item active"
+        >
+          <a
+            className="nav-link"
+            href="/"
+            onClick={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/register"
+            onClick={[Function]}
+          >
+            Register
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div
+    id="body"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div />
+      <div>
+         
+        <div
+          className="form-group row"
+        >
+          <label
+            className="col-sm-3 col-form-label"
+            htmlFor="email"
+          >
+            Email
+          </label>
+          <div
+            className="col-sm-9"
+          >
+            <input
+              autoFocus={true}
+              className="form-control"
+              id="email"
+              name="email"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="email"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="form-group row"
+        >
+          <label
+            className="col-sm-3 col-form-label"
+            htmlFor="full_name"
+          >
+            Full Name
+          </label>
+          <div
+            className="col-sm-9"
+          >
+            <input
+              autoFocus={false}
+              className="form-control"
+              id="full_name"
+              name="full_name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="form-group row"
+        >
+          <label
+            className="col-sm-3 col-form-label"
+            htmlFor="password"
+          >
+            Password
+          </label>
+          <div
+            className="col-sm-9"
+          >
+            <input
+              autoFocus={false}
+              className="form-control"
+              id="password"
+              name="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="password"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="form-group row"
+        >
+          <label
+            className="col-sm-3 col-form-label"
+            htmlFor="password_confirmation"
+          >
+            Confirm
+          </label>
+          <div
+            className="col-sm-9"
+          >
+            <input
+              autoFocus={false}
+              className="form-control"
+              id="password_confirmation"
+              name="password_confirmation"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onDragStart={[Function]}
+              onDrop={[Function]}
+              onFocus={[Function]}
+              type="password"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="form-group row"
+        >
+          <label
+            className="col-sm-3 col-form-label"
+          >
+            Role
+          </label>
+          <div
+            className="col-sm-9 radio-btns-group"
+          >
+            <label>
+              <input
+                checked={false}
+                name="role"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                onFocus={[Function]}
+                type="radio"
+                value="admin"
+              />
+               
+              admin
+            </label>
+            <label>
+              <input
+                checked={false}
+                name="role"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                onFocus={[Function]}
+                type="radio"
+                value="manager"
+              />
+               
+              manager
+            </label>
+            <label>
+              <input
+                checked={false}
+                name="role"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                onFocus={[Function]}
+                type="radio"
+                value="user"
+              />
+               
+              user
+            </label>
+          </div>
+        </div>
+         
+      </div>
+      <div
+        className="form-group row"
+      >
+        <div
+          className="offset-sm-3 col-sm-9"
+        >
+          <button
+            className="btn btn-primary"
+            type="Submit"
+          >
+             
+            Register
+             
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

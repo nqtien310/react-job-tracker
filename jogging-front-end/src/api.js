@@ -41,4 +41,5 @@ class Api {
     return this.adapter[method](path, params)
   }
 }
+export {Api}
 export default (new Api(ADAPTER, API_ROOT))
