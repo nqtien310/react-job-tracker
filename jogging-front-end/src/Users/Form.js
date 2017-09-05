@@ -9,6 +9,7 @@ import { createUser } from './state'
 import { connect } from 'react-redux'
 import ErrorMessage from '../components/ErrorMessage'
 import Form from '../components/Form'
+import './form.css'
 
 class RegisterForm extends Form{
   fields() {
@@ -31,11 +32,13 @@ class RegisterForm extends Form{
   render() {
     return (
       <Template>
-        <form onSubmit={this.props.handleSubmit(this.props.onSubmit)}>
-          <ErrorMessage />
-          <FieldsList fields={this.fields()} focusOn="email"/>
-          <Submit label={this.props.submitLabel} />
-        </form>
+        <div id="user-form">
+          <form onSubmit={this.props.handleSubmit(this.props.onSubmit)}>
+            <ErrorMessage />
+            <FieldsList fields={this.fields()} focusOn="email"/>
+            <Submit label={this.props.submitLabel} />
+          </form>
+        </div>
       </Template>
     )
   }

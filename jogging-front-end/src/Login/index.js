@@ -9,21 +9,24 @@ import { submitLogin } from './state'
 import { connect } from 'react-redux'
 import ErrorMessage from '../components/ErrorMessage'
 import Form from '../components/Form'
+import './form.css'
 
 class LoginForm extends Form {
   render() {
     return (
       <Template>
-        <form onSubmit={this.props.handleSubmit(this.props.submitLogin)}>
-          <ErrorMessage />
-          <FieldsList fields={this.props.fields} focusOn="email"/>
+        <div id="login-form">
+          <form onSubmit={this.props.handleSubmit(this.props.submitLogin)}>
+            <ErrorMessage />
+            <FieldsList fields={this.props.fields} focusOn="email"/>
 
-          <FormGroupAlignedRight>
-            Do not have account yet ?
-            <Link to="/register"> register here </Link>
-          </FormGroupAlignedRight>
-          <Submit label="Login" />
-        </form>
+            <FormGroupAlignedRight>
+              Do not have account yet ?
+              <Link to="/register"> register here </Link>
+            </FormGroupAlignedRight>
+            <Submit label="Login" />
+          </form>
+        </div>
       </Template>
     )
   }

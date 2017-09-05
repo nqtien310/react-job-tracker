@@ -11,7 +11,7 @@ class User::EntriesController < RestfulController
   end
 
   def collection
-    @user.entries
+    @user.entries.order(:date)
   end
 
   def filtered_collection

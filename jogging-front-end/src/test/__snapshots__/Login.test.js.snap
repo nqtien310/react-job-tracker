@@ -61,100 +61,104 @@ exports[`renders Login Form 1`] = `
   <div
     id="body"
   >
-    <form
-      onSubmit={[Function]}
+    <div
+      id="login-form"
     >
-      <div />
-      <div>
-         
+      <form
+        onSubmit={[Function]}
+      >
+        <div />
+        <div>
+           
+          <div
+            className="form-group row"
+          >
+            <label
+              className="col-sm-3 col-form-label"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <div
+              className="col-sm-9"
+            >
+              <input
+                autoFocus={true}
+                className="form-control"
+                id="email"
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                onFocus={[Function]}
+                type="email"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="form-group row"
+          >
+            <label
+              className="col-sm-3 col-form-label"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <div
+              className="col-sm-9"
+            >
+              <input
+                autoFocus={false}
+                className="form-control"
+                id="password"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                onFocus={[Function]}
+                type="password"
+                value=""
+              />
+            </div>
+          </div>
+           
+        </div>
         <div
           className="form-group row"
         >
-          <label
-            className="col-sm-3 col-form-label"
-            htmlFor="email"
-          >
-            Email
-          </label>
           <div
-            className="col-sm-9"
+            className="offset-sm-3 col-sm-9"
           >
-            <input
-              autoFocus={true}
-              className="form-control"
-              id="email"
-              name="email"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onDragStart={[Function]}
-              onDrop={[Function]}
-              onFocus={[Function]}
-              type="email"
-              value=""
-            />
+            Do not have account yet ?
+            <a
+              href="/register"
+              onClick={[Function]}
+            >
+               register here 
+            </a>
           </div>
         </div>
         <div
           className="form-group row"
         >
-          <label
-            className="col-sm-3 col-form-label"
-            htmlFor="password"
-          >
-            Password
-          </label>
           <div
-            className="col-sm-9"
+            className="offset-sm-3 col-sm-9"
           >
-            <input
-              autoFocus={false}
-              className="form-control"
-              id="password"
-              name="password"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onDragStart={[Function]}
-              onDrop={[Function]}
-              onFocus={[Function]}
-              type="password"
-              value=""
-            />
+            <button
+              className="btn btn-primary"
+              type="Submit"
+            >
+               
+              Login
+               
+            </button>
           </div>
         </div>
-         
-      </div>
-      <div
-        className="form-group row"
-      >
-        <div
-          className="offset-sm-3 col-sm-9"
-        >
-          Do not have account yet ?
-          <a
-            href="/register"
-            onClick={[Function]}
-          >
-             register here 
-          </a>
-        </div>
-      </div>
-      <div
-        className="form-group row"
-      >
-        <div
-          className="offset-sm-3 col-sm-9"
-        >
-          <button
-            className="btn btn-primary"
-            type="Submit"
-          >
-             
-            Login
-             
-          </button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>
 `;
@@ -220,110 +224,114 @@ exports[`renders error message when login failed 1`] = `
   <div
     id="body"
   >
-    <form
-      onSubmit={[Function]}
+    <div
+      id="login-form"
     >
-      <div
-        className="alert alert-danger"
+      <form
+        onSubmit={[Function]}
       >
-        <ul>
-          <li>
-             
-            Invalid username or password
-             
-          </li>
-        </ul>
-      </div>
-      <div>
-         
+        <div
+          className="alert alert-danger"
+        >
+          <ul>
+            <li>
+               
+              Invalid username or password
+               
+            </li>
+          </ul>
+        </div>
+        <div>
+           
+          <div
+            className="form-group row"
+          >
+            <label
+              className="col-sm-3 col-form-label"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <div
+              className="col-sm-9"
+            >
+              <input
+                autoFocus={true}
+                className="form-control"
+                id="email"
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                onFocus={[Function]}
+                type="email"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="form-group row"
+          >
+            <label
+              className="col-sm-3 col-form-label"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <div
+              className="col-sm-9"
+            >
+              <input
+                autoFocus={false}
+                className="form-control"
+                id="password"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
+                onFocus={[Function]}
+                type="password"
+                value=""
+              />
+            </div>
+          </div>
+           
+        </div>
         <div
           className="form-group row"
         >
-          <label
-            className="col-sm-3 col-form-label"
-            htmlFor="email"
-          >
-            Email
-          </label>
           <div
-            className="col-sm-9"
+            className="offset-sm-3 col-sm-9"
           >
-            <input
-              autoFocus={true}
-              className="form-control"
-              id="email"
-              name="email"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onDragStart={[Function]}
-              onDrop={[Function]}
-              onFocus={[Function]}
-              type="email"
-              value=""
-            />
+            Do not have account yet ?
+            <a
+              href="/register"
+              onClick={[Function]}
+            >
+               register here 
+            </a>
           </div>
         </div>
         <div
           className="form-group row"
         >
-          <label
-            className="col-sm-3 col-form-label"
-            htmlFor="password"
-          >
-            Password
-          </label>
           <div
-            className="col-sm-9"
+            className="offset-sm-3 col-sm-9"
           >
-            <input
-              autoFocus={false}
-              className="form-control"
-              id="password"
-              name="password"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onDragStart={[Function]}
-              onDrop={[Function]}
-              onFocus={[Function]}
-              type="password"
-              value=""
-            />
+            <button
+              className="btn btn-primary"
+              type="Submit"
+            >
+               
+              Login
+               
+            </button>
           </div>
         </div>
-         
-      </div>
-      <div
-        className="form-group row"
-      >
-        <div
-          className="offset-sm-3 col-sm-9"
-        >
-          Do not have account yet ?
-          <a
-            href="/register"
-            onClick={[Function]}
-          >
-             register here 
-          </a>
-        </div>
-      </div>
-      <div
-        className="form-group row"
-      >
-        <div
-          className="offset-sm-3 col-sm-9"
-        >
-          <button
-            className="btn btn-primary"
-            type="Submit"
-          >
-             
-            Login
-             
-          </button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>
 `;
