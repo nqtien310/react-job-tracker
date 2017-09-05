@@ -16,7 +16,5 @@ Rails.application.routes.draw do
 
   namespace 'my' do
     resource :user, controller: 'user'
-    resources :entries
-    resources :weekly_summaries, only: [:index]
   end
 end
