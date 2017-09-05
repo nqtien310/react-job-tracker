@@ -1,0 +1,454 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create 1`] = `
+<div>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Email
+        </th>
+        <th>
+          Full Name
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+           
+          nqtien310@gmail.com
+           
+        </td>
+        <td>
+           
+          Tien Nguyen
+           
+        </td>
+        <td
+          className="actions"
+        >
+          <a
+            className="btn btn-danger"
+            onClick={[Function]}
+          >
+            Delete
+          </a>
+          <a
+            className="btn btn-warning"
+            href="/users/43/edit"
+            onClick={[Function]}
+          >
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="action-footers"
+  >
+    <a
+      className="btn btn-primary"
+      href="/users/new"
+      onClick={[Function]}
+    >
+      Add
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Create 2`] = `
+<div>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Email
+        </th>
+        <th>
+          Full Name
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+           
+          nqtien31@gmail.com
+           
+        </td>
+        <td>
+           
+          Tien Nguyen
+           
+        </td>
+        <td
+          className="actions"
+        >
+          <a
+            className="btn btn-danger"
+            onClick={[Function]}
+          >
+            Delete
+          </a>
+          <a
+            className="btn btn-warning"
+            href="/users/43/edit"
+            onClick={[Function]}
+          >
+            Edit
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+           
+          new@gmail.com
+           
+        </td>
+        <td>
+           
+          New
+           
+        </td>
+        <td
+          className="actions"
+        >
+          <a
+            className="btn btn-danger"
+            onClick={[Function]}
+          >
+            Delete
+          </a>
+          <a
+            className="btn btn-warning"
+            href="/users/44/edit"
+            onClick={[Function]}
+          >
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="action-footers"
+  >
+    <a
+      className="btn btn-primary"
+      href="/users/new"
+      onClick={[Function]}
+    >
+      Add
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Delete 1`] = `
+<div>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Email
+        </th>
+        <th>
+          Full Name
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+           
+          nqtien310@gmail.com
+           
+        </td>
+        <td>
+           
+          Tien Nguyen
+           
+        </td>
+        <td
+          className="actions"
+        >
+          <a
+            className="btn btn-danger"
+            onClick={[Function]}
+          >
+            Delete
+          </a>
+          <a
+            className="btn btn-warning"
+            href="/users/43/edit"
+            onClick={[Function]}
+          >
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="action-footers"
+  >
+    <a
+      className="btn btn-primary"
+      href="/users/new"
+      onClick={[Function]}
+    >
+      Add
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Delete 2`] = `
+<div>
+   
+  <div>
+     No users created 
+  </div>
+  <div
+    className="action-footers"
+  >
+    <a
+      className="btn btn-primary"
+      href="/users/new"
+      onClick={[Function]}
+    >
+      Add
+    </a>
+  </div>
+</div>
+`;
+
+exports[`No User created 1`] = `
+<div>
+   
+  <div>
+     No users created 
+  </div>
+  <div
+    className="action-footers"
+  >
+    <a
+      className="btn btn-primary"
+      href="/users/new"
+      onClick={[Function]}
+    >
+      Add
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Update 1`] = `
+<div>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Email
+        </th>
+        <th>
+          Full Name
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+           
+          nqtien310@gmail.com
+           
+        </td>
+        <td>
+           
+          Tien Nguyen
+           
+        </td>
+        <td
+          className="actions"
+        >
+          <a
+            className="btn btn-danger"
+            onClick={[Function]}
+          >
+            Delete
+          </a>
+          <a
+            className="btn btn-warning"
+            href="/users/43/edit"
+            onClick={[Function]}
+          >
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="action-footers"
+  >
+    <a
+      className="btn btn-primary"
+      href="/users/new"
+      onClick={[Function]}
+    >
+      Add
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Update 2`] = `
+<div>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Email
+        </th>
+        <th>
+          Full Name
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+           
+          updated@gmail.com
+           
+        </td>
+        <td>
+           
+          Tien Nguyen
+           
+        </td>
+        <td
+          className="actions"
+        >
+          <a
+            className="btn btn-danger"
+            onClick={[Function]}
+          >
+            Delete
+          </a>
+          <a
+            className="btn btn-warning"
+            href="/users/43/edit"
+            onClick={[Function]}
+          >
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="action-footers"
+  >
+    <a
+      className="btn btn-primary"
+      href="/users/new"
+      onClick={[Function]}
+    >
+      Add
+    </a>
+  </div>
+</div>
+`;
+
+exports[`With Users 1`] = `
+<div>
+  <table
+    className="table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Email
+        </th>
+        <th>
+          Full Name
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+           
+          nqtien310@gmail.com
+           
+        </td>
+        <td>
+           
+          Tien Nguyen
+           
+        </td>
+        <td
+          className="actions"
+        >
+          <a
+            className="btn btn-danger"
+            onClick={[Function]}
+          >
+            Delete
+          </a>
+          <a
+            className="btn btn-warning"
+            href="/users/43/edit"
+            onClick={[Function]}
+          >
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    className="action-footers"
+  >
+    <a
+      className="btn btn-primary"
+      href="/users/new"
+      onClick={[Function]}
+    >
+      Add
+    </a>
+  </div>
+</div>
+`;

@@ -13,7 +13,7 @@ function stubApiError(type, response){
 function stubApiSuccess(type, response){
   response = {  "data": response }
 
-  Api.prototype.get = (path, params) => {
+  Api.prototype[type] = (path, params) => {
     return (new Promise((resolve, reject) => {
       resolve(response)
     }))
