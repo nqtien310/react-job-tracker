@@ -10,11 +10,6 @@ class Home extends React.Component{
     this.userId = this.props.match.params.userId
   }
 
-  componentWillMount(){
-    this.props.fetchEntries(this.props.match.params.userId)
-  }
-
-
   render() {
     return (
       <Template>

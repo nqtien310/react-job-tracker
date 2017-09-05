@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { deleteEntry, showEditForm } from './state'
+import { fetchEntries, deleteEntry, showEditForm } from './state'
 
 class List extends React.Component{
   constructor(props) {
@@ -9,6 +9,10 @@ class List extends React.Component{
 
   onDelete(id){
     this.props.deleteEntry(this.props.userId, id)
+  }
+
+  componentWillMount() {
+    this.props.fetchEntries(this.props.userId)
   }
 
   onEdit(id){
@@ -72,6 +76,7 @@ class List extends React.Component{
 
 List = connect(null, {
   deleteEntry,
-  showEditForm
+  showEditForm,
+  fetchEntries
 })(List)
 export default List

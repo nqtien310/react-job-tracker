@@ -8,10 +8,6 @@ class Home extends React.Component{
     super(props)
   }
 
-  componentWillMount(){
-    this.props.fetchEntries(this.props.myUser.id)
-  }
-
   render() {
     return (
       <div>
