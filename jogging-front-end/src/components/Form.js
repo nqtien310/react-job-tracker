@@ -1,6 +1,6 @@
 import React from 'react'
 import setErrorMessage from '../actions/setErrorMessage'
-const PropTypes = require('prop-types');
+import PropTypes from 'prop-types'
 
 class Form extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Form extends React.Component {
 }
 
 Form.contextTypes = {
-  store: React.PropTypes.object
+  store: PropTypes.object
 }
 
 export default Form
