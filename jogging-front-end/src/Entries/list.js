@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { fetchEntries, deleteEntry, showEditForm } from './state'
+import Entry from './Entry'
 
 class List extends React.Component{
   constructor(props) {
     super(props)
   }
 
-  onDelete(id){
+  onDelete = (id) => {
     this.props.deleteEntry(this.props.userId, id)
   }
 
@@ -15,7 +16,7 @@ class List extends React.Component{
     this.props.fetchEntries(this.props.userId)
   }
 
-  onEdit(id){
+  onEdit = (id) => {
     let entry = this.props.entries.find((e) => e.id == id)
     this.props.showEditForm(entry)
   }
@@ -25,9 +26,9 @@ class List extends React.Component{
       <table className="table">
         <thead>
           <tr>
+            <th>Date</th>
             <th>Distance</th>
             <th>Time</th>
-            <th>Date</th>
             <th>Speed</th>
             <th>Action</th>
           </tr>
@@ -43,24 +44,9 @@ class List extends React.Component{
   renderEntries() {
     return this.props.entries.map(entry => {
       return(
-        <tr key={entry.id}>
-          <td>
-            {entry.distance_in_metre} m
-          </td>
-          <td>
-            {entry.time_in_second} s
-          </td>
-          <td>
-            {entry.formatted_date}
-          </td>
-          <td>
-            {entry.speed} m/s
-          </td>
-          <td className="actions">
-            <a onClick={()=> this.onDelete(entry.id)} className="btn btn-danger">Delete</a>
-            <a onClick={()=> this.onEdit(entry.id)} className="btn btn-warning">Edit</a>
-          </td>
-        </tr>
+        <Entry key={entry.id} entry={entry}
+          onDelete={this.onDelete}
+          onEdit={this.onEdit}/>
       )
     })
   }

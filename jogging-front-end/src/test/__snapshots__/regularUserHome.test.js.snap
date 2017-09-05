@@ -85,7 +85,9 @@ exports[`Regular User Home (No Entries) 1`] = `
         className="btn btn-primary"
         onClick={[Function]}
       >
-        Add
+        <i
+          className="fa fa-plus"
+        />
       </a>
     </div>
   </div>
@@ -167,13 +169,13 @@ exports[`Regular User Home (With Entries) 1`] = `
       <thead>
         <tr>
           <th>
+            Date
+          </th>
+          <th>
             Distance
           </th>
           <th>
             Time
-          </th>
-          <th>
-            Date
           </th>
           <th>
             Speed
@@ -185,6 +187,11 @@ exports[`Regular User Home (With Entries) 1`] = `
       </thead>
       <tbody>
         <tr>
+          <td
+            className="date"
+          >
+            Sunday, September 3rd 2017
+          </td>
           <td>
             100
              m
@@ -192,9 +199,6 @@ exports[`Regular User Home (With Entries) 1`] = `
           <td>
             100
              s
-          </td>
-          <td>
-            2017-09-03
           </td>
           <td>
             1
@@ -207,17 +211,26 @@ exports[`Regular User Home (With Entries) 1`] = `
               className="btn btn-danger"
               onClick={[Function]}
             >
-              Delete
+              <i
+                className="fa fa-trash"
+              />
             </a>
             <a
               className="btn btn-warning"
               onClick={[Function]}
             >
-              Edit
+              <i
+                className="fa fa-edit"
+              />
             </a>
           </td>
         </tr>
         <tr>
+          <td
+            className="date"
+          >
+            Wednesday, September 6th 2017
+          </td>
           <td>
             200
              m
@@ -225,9 +238,6 @@ exports[`Regular User Home (With Entries) 1`] = `
           <td>
             200
              s
-          </td>
-          <td>
-            2017-09-06
           </td>
           <td>
             1
@@ -240,13 +250,17 @@ exports[`Regular User Home (With Entries) 1`] = `
               className="btn btn-danger"
               onClick={[Function]}
             >
-              Delete
+              <i
+                className="fa fa-trash"
+              />
             </a>
             <a
               className="btn btn-warning"
               onClick={[Function]}
             >
-              Edit
+              <i
+                className="fa fa-edit"
+              />
             </a>
           </td>
         </tr>
@@ -265,7 +279,9 @@ exports[`Regular User Home (With Entries) 1`] = `
         className="btn btn-primary"
         onClick={[Function]}
       >
-        Add
+        <i
+          className="fa fa-plus"
+        />
       </a>
     </div>
   </div>

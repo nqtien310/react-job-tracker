@@ -68,7 +68,9 @@ class Entries extends React.Component{
 
         <Link to={this.props.reportLink}>Report by week</Link>
         <div className="action-footers">
-          <a onClick={this.props.showCreateForm} className="btn btn-primary">Add</a>
+          <a onClick={this.props.showCreateForm} className="btn btn-primary">
+            <i className="fa fa-plus"/>
+          </a>
         </div>
       </div>
     )

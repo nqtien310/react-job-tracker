@@ -22,7 +22,9 @@ exports[`renders Login Form 1`] = `
       className="navbar-brand"
       href="#"
     >
-      Navbar
+      <i
+        className="fa fa-home"
+      />
     </a>
     <div
       className="collapse navbar-collapse"
@@ -179,7 +181,9 @@ exports[`renders error message when login failed 1`] = `
       className="navbar-brand"
       href="#"
     >
-      Navbar
+      <i
+        className="fa fa-home"
+      />
     </a>
     <div
       className="collapse navbar-collapse"

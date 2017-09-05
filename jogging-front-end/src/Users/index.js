@@ -16,16 +16,28 @@ class UsersList extends React.Component{
     if(this.props.myUser.role == "admin"){
       return (
         <td className="actions">
-          <a onClick={()=> this.onDelete(user.id)} className="btn btn-danger">Delete</a>
-          <Link to={`/users/${user.id}/edit`} className="btn btn-warning">Edit</Link>
-          <Link to={`/users/${user.id}/entries`} className="btn btn-primary">Entries</Link>
-          <Link to={`/users/${user.id}/report`} className="btn btn-primary">Report</Link>
+          <a onClick={()=> this.onDelete(user.id)} className="btn btn-danger">
+            <i className="fa fa-trash"/>
+          </a>
+          <Link to={`/users/${user.id}/edit`} className="btn btn-warning">
+            <i className="fa fa-edit"/>
+          </Link>
+          <Link to={`/users/${user.id}/entries`} className="btn btn-primary">
+            <i className="fa fa-calendar"/>
+          </Link>
+          <Link to={`/users/${user.id}/report`} className="btn btn-primary">
+            <i className="fa fa-bar-chart"/>
+          </Link>
         </td>
       )
     }else {
       return (<td className="actions">
-        <a onClick={()=> this.onDelete(user.id)} className="btn btn-danger">Delete</a>
-        <Link to={`/users/${user.id}/edit`} className="btn btn-warning">Edit</Link>
+        <a onClick={()=> this.onDelete(user.id)} className="btn btn-danger">
+          <i className="fa fa-trash"/>
+        </a>
+        <Link to={`/users/${user.id}/edit`} className="btn btn-warning">
+          <i className="fa fa-edit"/>
+        </Link>
       </td> )
     }
   }
@@ -48,7 +60,9 @@ class UsersList extends React.Component{
         <div> <div> No users created </div>
 
           <div className="action-footers">
-            <Link to="/users/new" className="btn btn-primary">Add</Link>
+            <Link to="/users/new" className="btn btn-primary">
+              <i className="fa fa-plus"/>
+            </Link>
           </div>
         </div>
       )
@@ -70,7 +84,9 @@ class UsersList extends React.Component{
           </table>
 
           <div className="action-footers">
-            <Link to="/users/new" className="btn btn-primary">Add</Link>
+            <Link to="/users/new" className="btn btn-primary">
+              <i className="fa fa-plus"/>
+            </Link>
           </div>
         </div>
       )

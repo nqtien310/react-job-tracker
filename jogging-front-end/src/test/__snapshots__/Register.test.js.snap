@@ -22,7 +22,9 @@ exports[`Register Form 1`] = `
       className="navbar-brand"
       href="#"
     >
-      Navbar
+      <i
+        className="fa fa-home"
+      />
     </a>
     <div
       className="collapse navbar-collapse"
@@ -276,7 +278,9 @@ exports[`displays error when register failed 1`] = `
       className="navbar-brand"
       href="#"
     >
-      Navbar
+      <i
+        className="fa fa-home"
+      />
     </a>
     <div
       className="collapse navbar-collapse"

@@ -74,13 +74,13 @@ exports[`Create entry 1`] = `
     <thead>
       <tr>
         <th>
+          Date
+        </th>
+        <th>
           Distance
         </th>
         <th>
           Time
-        </th>
-        <th>
-          Date
         </th>
         <th>
           Speed
@@ -92,6 +92,11 @@ exports[`Create entry 1`] = `
     </thead>
     <tbody>
       <tr>
+        <td
+          className="date"
+        >
+          Sunday, September 3rd 2017
+        </td>
         <td>
           100
            m
@@ -99,9 +104,6 @@ exports[`Create entry 1`] = `
         <td>
           100
            s
-        </td>
-        <td>
-          2017-09-03
         </td>
         <td>
           1
@@ -114,17 +116,26 @@ exports[`Create entry 1`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
       <tr>
+        <td
+          className="date"
+        >
+          Wednesday, September 6th 2017
+        </td>
         <td>
           200
            m
@@ -132,9 +143,6 @@ exports[`Create entry 1`] = `
         <td>
           200
            s
-        </td>
-        <td>
-          2017-09-06
         </td>
         <td>
           1
@@ -147,13 +155,17 @@ exports[`Create entry 1`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
@@ -172,7 +184,9 @@ exports[`Create entry 1`] = `
       className="btn btn-primary"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>
@@ -252,13 +266,13 @@ exports[`Create entry 2`] = `
     <thead>
       <tr>
         <th>
+          Date
+        </th>
+        <th>
           Distance
         </th>
         <th>
           Time
-        </th>
-        <th>
-          Date
         </th>
         <th>
           Speed
@@ -270,6 +284,11 @@ exports[`Create entry 2`] = `
     </thead>
     <tbody>
       <tr>
+        <td
+          className="date"
+        >
+          Sunday, September 3rd 2017
+        </td>
         <td>
           100
            m
@@ -279,9 +298,6 @@ exports[`Create entry 2`] = `
            s
         </td>
         <td>
-          2017-09-03
-        </td>
-        <td>
           1
            m/s
         </td>
@@ -292,17 +308,26 @@ exports[`Create entry 2`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
       <tr>
+        <td
+          className="date"
+        >
+          Wednesday, September 6th 2017
+        </td>
         <td>
           200
            m
@@ -312,9 +337,6 @@ exports[`Create entry 2`] = `
            s
         </td>
         <td>
-          2017-09-06
-        </td>
-        <td>
           1
            m/s
         </td>
@@ -325,17 +347,26 @@ exports[`Create entry 2`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
       <tr>
+        <td
+          className="date"
+        >
+          Saturday, September 9th 2017
+        </td>
         <td>
           300
            m
@@ -345,9 +376,6 @@ exports[`Create entry 2`] = `
            s
         </td>
         <td>
-          2017-09-09
-        </td>
-        <td>
           1
            m/s
         </td>
@@ -358,13 +386,17 @@ exports[`Create entry 2`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
@@ -383,7 +415,9 @@ exports[`Create entry 2`] = `
       className="btn btn-primary"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>
@@ -463,13 +497,13 @@ exports[`Delete entry 1`] = `
     <thead>
       <tr>
         <th>
+          Date
+        </th>
+        <th>
           Distance
         </th>
         <th>
           Time
-        </th>
-        <th>
-          Date
         </th>
         <th>
           Speed
@@ -481,6 +515,11 @@ exports[`Delete entry 1`] = `
     </thead>
     <tbody>
       <tr>
+        <td
+          className="date"
+        >
+          Sunday, September 3rd 2017
+        </td>
         <td>
           100
            m
@@ -488,9 +527,6 @@ exports[`Delete entry 1`] = `
         <td>
           100
            s
-        </td>
-        <td>
-          2017-09-03
         </td>
         <td>
           1
@@ -503,17 +539,26 @@ exports[`Delete entry 1`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
       <tr>
+        <td
+          className="date"
+        >
+          Wednesday, September 6th 2017
+        </td>
         <td>
           200
            m
@@ -521,9 +566,6 @@ exports[`Delete entry 1`] = `
         <td>
           200
            s
-        </td>
-        <td>
-          2017-09-06
         </td>
         <td>
           1
@@ -536,13 +578,17 @@ exports[`Delete entry 1`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
@@ -561,7 +607,9 @@ exports[`Delete entry 1`] = `
       className="btn btn-primary"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>
@@ -641,13 +689,13 @@ exports[`Delete entry 2`] = `
     <thead>
       <tr>
         <th>
+          Date
+        </th>
+        <th>
           Distance
         </th>
         <th>
           Time
-        </th>
-        <th>
-          Date
         </th>
         <th>
           Speed
@@ -659,6 +707,11 @@ exports[`Delete entry 2`] = `
     </thead>
     <tbody>
       <tr>
+        <td
+          className="date"
+        >
+          Wednesday, September 6th 2017
+        </td>
         <td>
           200
            m
@@ -666,9 +719,6 @@ exports[`Delete entry 2`] = `
         <td>
           200
            s
-        </td>
-        <td>
-          2017-09-06
         </td>
         <td>
           1
@@ -681,13 +731,17 @@ exports[`Delete entry 2`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
@@ -706,7 +760,9 @@ exports[`Delete entry 2`] = `
       className="btn btn-primary"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>
@@ -796,7 +852,9 @@ exports[`Listing (No Entries) 1`] = `
       className="btn btn-primary"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>
@@ -876,13 +934,13 @@ exports[`Listing (With entries) 1`] = `
     <thead>
       <tr>
         <th>
+          Date
+        </th>
+        <th>
           Distance
         </th>
         <th>
           Time
-        </th>
-        <th>
-          Date
         </th>
         <th>
           Speed
@@ -894,6 +952,11 @@ exports[`Listing (With entries) 1`] = `
     </thead>
     <tbody>
       <tr>
+        <td
+          className="date"
+        >
+          Sunday, September 3rd 2017
+        </td>
         <td>
           100
            m
@@ -901,9 +964,6 @@ exports[`Listing (With entries) 1`] = `
         <td>
           100
            s
-        </td>
-        <td>
-          2017-09-03
         </td>
         <td>
           1
@@ -916,17 +976,26 @@ exports[`Listing (With entries) 1`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
       <tr>
+        <td
+          className="date"
+        >
+          Wednesday, September 6th 2017
+        </td>
         <td>
           200
            m
@@ -934,9 +1003,6 @@ exports[`Listing (With entries) 1`] = `
         <td>
           200
            s
-        </td>
-        <td>
-          2017-09-06
         </td>
         <td>
           1
@@ -949,13 +1015,17 @@ exports[`Listing (With entries) 1`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
@@ -974,7 +1044,9 @@ exports[`Listing (With entries) 1`] = `
       className="btn btn-primary"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>
@@ -1054,13 +1126,13 @@ exports[`Update entry 1`] = `
     <thead>
       <tr>
         <th>
+          Date
+        </th>
+        <th>
           Distance
         </th>
         <th>
           Time
-        </th>
-        <th>
-          Date
         </th>
         <th>
           Speed
@@ -1072,6 +1144,11 @@ exports[`Update entry 1`] = `
     </thead>
     <tbody>
       <tr>
+        <td
+          className="date"
+        >
+          Wednesday, September 6th 2017
+        </td>
         <td>
           200
            m
@@ -1079,9 +1156,6 @@ exports[`Update entry 1`] = `
         <td>
           200
            s
-        </td>
-        <td>
-          2017-09-06
         </td>
         <td>
           1
@@ -1094,13 +1168,17 @@ exports[`Update entry 1`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
@@ -1119,7 +1197,9 @@ exports[`Update entry 1`] = `
       className="btn btn-primary"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>
@@ -1199,13 +1279,13 @@ exports[`Update entry 2`] = `
     <thead>
       <tr>
         <th>
+          Date
+        </th>
+        <th>
           Distance
         </th>
         <th>
           Time
-        </th>
-        <th>
-          Date
         </th>
         <th>
           Speed
@@ -1217,6 +1297,11 @@ exports[`Update entry 2`] = `
     </thead>
     <tbody>
       <tr>
+        <td
+          className="date"
+        >
+          Wednesday, September 6th 2017
+        </td>
         <td>
           500
            m
@@ -1224,9 +1309,6 @@ exports[`Update entry 2`] = `
         <td>
           500
            s
-        </td>
-        <td>
-          2017-09-06
         </td>
         <td>
           1
@@ -1239,13 +1321,17 @@ exports[`Update entry 2`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
@@ -1264,7 +1350,9 @@ exports[`Update entry 2`] = `
       className="btn btn-primary"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>

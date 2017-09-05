@@ -14,7 +14,9 @@ exports[`No User created 1`] = `
       href="/users/new"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>
@@ -57,14 +59,18 @@ exports[`With Users 1`] = `
             className="btn btn-danger"
             onClick={[Function]}
           >
-            Delete
+            <i
+              className="fa fa-trash"
+            />
           </a>
           <a
             className="btn btn-warning"
             href="/users/43/edit"
             onClick={[Function]}
           >
-            Edit
+            <i
+              className="fa fa-edit"
+            />
           </a>
         </td>
       </tr>
@@ -78,7 +84,9 @@ exports[`With Users 1`] = `
       href="/users/new"
       onClick={[Function]}
     >
-      Add
+      <i
+        className="fa fa-plus"
+      />
     </a>
   </div>
 </div>
