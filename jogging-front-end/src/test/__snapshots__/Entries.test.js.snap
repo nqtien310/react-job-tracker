@@ -101,10 +101,7 @@ exports[`Create entry 1`] = `
           100
            m
         </td>
-        <td>
-          100
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -140,10 +137,7 @@ exports[`Create entry 1`] = `
           200
            m
         </td>
-        <td>
-          200
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -293,10 +287,7 @@ exports[`Create entry 2`] = `
           100
            m
         </td>
-        <td>
-          100
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -332,10 +323,7 @@ exports[`Create entry 2`] = `
           200
            m
         </td>
-        <td>
-          200
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -371,10 +359,7 @@ exports[`Create entry 2`] = `
           300
            m
         </td>
-        <td>
-          300
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -524,10 +509,7 @@ exports[`Delete entry 1`] = `
           100
            m
         </td>
-        <td>
-          100
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -563,10 +545,7 @@ exports[`Delete entry 1`] = `
           200
            m
         </td>
-        <td>
-          200
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -716,10 +695,7 @@ exports[`Delete entry 2`] = `
           200
            m
         </td>
-        <td>
-          200
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -961,10 +937,7 @@ exports[`Listing (With entries) 1`] = `
           100
            m
         </td>
-        <td>
-          100
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -1000,10 +973,7 @@ exports[`Listing (With entries) 1`] = `
           200
            m
         </td>
-        <td>
-          200
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -1153,10 +1123,7 @@ exports[`Update entry 1`] = `
           200
            m
         </td>
-        <td>
-          200
-           s
-        </td>
+        <td />
         <td>
           1
            m/s
@@ -1306,10 +1273,7 @@ exports[`Update entry 2`] = `
           500
            m
         </td>
-        <td>
-          500
-           s
-        </td>
+        <td />
         <td>
           1
            m/s

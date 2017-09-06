@@ -196,10 +196,7 @@ exports[`Regular User Home (With Entries) 1`] = `
             100
              m
           </td>
-          <td>
-            100
-             s
-          </td>
+          <td />
           <td>
             1
              m/s
@@ -235,10 +232,7 @@ exports[`Regular User Home (With Entries) 1`] = `
             200
              m
           </td>
-          <td>
-            200
-             s
-          </td>
+          <td />
           <td>
             1
              m/s

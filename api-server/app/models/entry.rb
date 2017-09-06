@@ -33,6 +33,10 @@ class Entry < ApplicationRecord
     self.speed = (distance_in_metre.to_f / time_in_second.to_f).round(2)
   end
 
+  def readable_time
+    Time.at(time_in_second).utc.strftime("%H:%M:%S")
+  end
+
   def formatted_date
     self.date.to_s(:dmy)
   end

@@ -15,7 +15,7 @@ export default function Entry(props){
         {entry.distance_in_metre} m
       </td>
       <td>
-        {entry.time_in_second} s
+        {entry.readable_time}
       </td>
       <td>
         {entry.speed} m/s

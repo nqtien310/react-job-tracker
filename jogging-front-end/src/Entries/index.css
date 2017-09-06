@@ -23,6 +23,16 @@ table td input.form-control{
   display: inline-block;
 }
 
+.field-container.time {
+  width: 220px;
+}
+
+.field-container.time input{
+  display:inline-block;
+  width: 130px;
+  margin-right: 10px;
+}
+
 .date-filters {
   margin-bottom: 20px
 }

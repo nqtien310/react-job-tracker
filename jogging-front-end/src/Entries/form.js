@@ -9,8 +9,16 @@ import { createEntry, updateEntry } from './state'
 import DatePicker from 'react-datepicker'
 import renderDatePicker from '../components/RenderDatePicker'
 import Form from '../components/Form'
+import moment from 'moment'
 
 class EntryForm extends Form{
+  constructor(props){
+    super(props)
+    this.state = {
+      formattedTime: null
+    }
+  }
+
   onSubmit = (params) => {
     if(this.props.initialValues){
       this.props.updateEntry(this.props.userId
@@ -23,22 +31,46 @@ class EntryForm extends Form{
   renderFields() {
     return this.props.fields.map( (f) => {
       return (<div className="field-container" key={f.name}>
-        <Field autoFocus={f.name=="distance_in_metre"} className="form-control"
-          placeholder={f.label}
-          id={f.name}
-          name={f.name}
-          component={f.component}
-          type={f.type}
-        />
       </div>)
     })
+  }
+
+  renderField(f, onKeyUp=null){
+    return (
+      <Field autoFocus={f.name=="distance_in_metre"} className="form-control"
+        placeholder={f.label}
+        id={f.name}
+        name={f.name}
+        component={f.component}
+        onKeyUp={onKeyUp}
+        type={f.type}
+      />
+    )
+  }
+
+  onKeyUp = (e) => {
+    if(e.currentTarget.value){
+      let second = parseInt(e.currentTarget.value)
+      let formatted = moment.utc(second*1000).format('HH:mm:ss');
+      this.setState({formattedTime: formatted})
+    }
   }
 
   render() {
     return (
       <form id="entry-form" onSubmit={this.props.handleSubmit(this.onSubmit)}>
-        <div className="display-inline">
-          {this.renderFields()}
+        <div className="field-container" key="0" >
+          {this.renderField(this.props.fields[0])}
+        </div>
+        <div className="field-container time" key="1" >
+          {this.renderField(this.props.fields[1], this.onKeyUp)}
+          {this.state.formattedTime}
+        </div>
+        <div className="field-container" key="2" >
+          {this.renderField(this.props.fields[2])}
+        </div>
+
+        <div className="field-container" key="3">
           <a onClick={this.props.handleSubmit(this.onSubmit)} className="btn btn-primary">Save</a>
         </div>
       </form>
