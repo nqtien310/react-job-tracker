@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Entry, type: :model do
   it { should validate_presence_of :distance_in_metre }
-  it { should validate_presence_of :time_in_second }
+  it { should validate_presence_of :readable_time }
   it { should validate_presence_of :date }
   it { should validate_presence_of :user }
   it { should belong_to :user}

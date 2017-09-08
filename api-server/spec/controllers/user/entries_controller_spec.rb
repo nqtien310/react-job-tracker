@@ -48,13 +48,13 @@ describe User::EntriesController do
     let(:path) { :create }
     let(:valid_params) do
       {entry: {distance_in_metre: 37000,
-               time_in_second: 1000,
+               readable_time: '01:00:00',
                date: 1.day.ago,
       }, user_id: resource_user.id}
     end
     let(:invalid_params) do
       {user_id: resource_user.id,
-       entry: {distance_in_metre: 37000, time_in_second: 1000}
+       entry: {distance_in_metre: 37000, readable_time: '01:00:00'}
       }
     end
     let(:expected_error) { "Date can't be blank" }

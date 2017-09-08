@@ -1,9 +1,10 @@
 class Entry < ApplicationRecord
   validates :distance_in_metre, presence: true
-  validates :time_in_second, presence: true
+  validates :readable_time, presence: true
   validates :date, presence: true, uniqueness: { scope: 'user_id' }
   validates :user, presence: true
 
+  before_save :set_time_in_second
   before_save :set_speed
 
   belongs_to :user
@@ -33,8 +34,9 @@ class Entry < ApplicationRecord
     self.speed = (distance_in_metre.to_f / time_in_second.to_f).round(2)
   end
 
-  def readable_time
-    Time.at(time_in_second).utc.strftime("%H:%M:%S")
+  def set_time_in_second
+    times = readable_time.split(':').map(&:to_i)
+    self.time_in_second = times[0]*3600 + times[1]*60 + times[2].to_i
   end
 
   def formatted_date

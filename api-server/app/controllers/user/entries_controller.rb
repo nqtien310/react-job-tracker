@@ -24,7 +24,7 @@ class User::EntriesController < RestfulController
 
   def permitted_params
     params.require(:entry).permit(
-      :time_in_second,
+      :readable_time,
       :distance_in_metre,
       :date)
   end
