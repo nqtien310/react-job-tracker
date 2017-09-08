@@ -10,6 +10,7 @@ import DatePicker from 'react-datepicker'
 import renderDatePicker from '../components/RenderDatePicker'
 import Form from '../components/Form'
 import moment from 'moment'
+import renderTimePicker from '../components/RenderTimePicker'
 
 class EntryForm extends Form{
   constructor(props){
@@ -42,6 +43,7 @@ class EntryForm extends Form{
         id={f.name}
         name={f.name}
         component={f.component}
+        parse={f.parse}
         onKeyUp={onKeyUp}
         type={f.type}
       />
@@ -63,8 +65,7 @@ class EntryForm extends Form{
           {this.renderField(this.props.fields[0])}
         </div>
         <div className="field-container time" key="1" >
-          {this.renderField(this.props.fields[1], this.onKeyUp)}
-          {this.state.formattedTime}
+          {this.renderField(this.props.fields[1])}
         </div>
         <div className="field-container" key="2" >
           {this.renderField(this.props.fields[2])}
@@ -83,7 +84,12 @@ EntryForm = reduxForm({
   enableReinitialize: true,
   fields: [
     {name: "distance_in_metre", label: "Distance (m)", type:"number", component: "input"},
-    {name: "time_in_second", label: "Time (s)", type:"number", component: "input"},
+    {name: "readable_time",
+      label: "Time (s)",
+      type:"number",
+      component: renderTimePicker,
+      parse: moment => (moment.format("HH:mm:ss"))
+    },
     {name: "date", label: "Date", type:"text", component: renderDatePicker}
   ]
 })(EntryForm)

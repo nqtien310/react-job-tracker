@@ -1,5 +1,6 @@
 import api from '../api'
 import Rx from 'rxjs/Rx'
+import { clearToken } from '../epics/logout'
 
 const DONE_FETCHING_MY_USER = 'DONE_FETCHING_MY_USER'
 const UNSET_MY_USER         = 'UNSET_MY_USER'
@@ -31,6 +32,10 @@ const fetchMyUserEpic = (action$) => {
   return action$.ofType(FETCH_MY_USER).switchMap(action =>{
     return Rx.Observable.fromPromise(api.get("my/user"))
       .map(response => doneFetchingMyUser(response))
+      .catch(error => {
+        console.log("CATCHED")
+        return Rx.Observable.of(clearToken())
+      })
   })
 }
 

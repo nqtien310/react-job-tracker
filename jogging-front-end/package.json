@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "0.16.2",
+    "rc-time-picker": "^2.4.1",
     "react": "^15.6.1",
     "react-datepicker": "^0.53.0",
     "react-dom": "^15.6.1",
