@@ -12,13 +12,13 @@ class renderTimePicker extends React.Component {
     } = this.props
 
     if(input.value === ""){
-      input.value = null
+      input.value = moment(`2017-01-01T00:00:00`)
     }else {
       input.value = moment(`2017-01-01T${input.value}`)
     }
 
     return (
-      <TimePicker {...input} />
+      <TimePicker {...input}/>
     )
   }
 }
