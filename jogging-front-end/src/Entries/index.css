@@ -23,16 +23,6 @@ table td input.form-control{
   display: inline-block;
 }
 
-.field-container.time {
-  width: 220px;
-}
-
-.field-container.time input{
-  display:inline-block;
-  width: 130px;
-  margin-right: 10px;
-}
-
 .date-filters {
   margin-bottom: 20px
 }
@@ -44,4 +34,16 @@ table td input.form-control{
 .date-filter {
   width: 150px;
   margin-left: 30px;
+}
+
+input.rc-time-picker-input {
+  display: block;
+  width: 100%;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  height: auto;
 }

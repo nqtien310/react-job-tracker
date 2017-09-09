@@ -14,7 +14,6 @@ class renderTimePicker extends React.Component {
     if(input.value === ""){
       input.value = null
     }else {
-      console.log(input.value)
       input.value = moment(`2017-01-01T${input.value}`)
     }
 
