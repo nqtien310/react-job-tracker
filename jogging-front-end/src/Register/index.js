@@ -9,7 +9,8 @@ function RegisterForm(props) {
     <Form
     submitLabel="Register"
     allowRoleEdit={true}
-    onSubmit={props.createUser}/>
+    onSubmit={props.createUser}
+    initialValues={{role: "user"}}/>
   )
 }
 

@@ -221,7 +221,7 @@ exports[`Register Form 1`] = `
               </label>
               <label>
                 <input
-                  checked={false}
+                  checked={true}
                   name="role"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -491,7 +491,7 @@ exports[`displays error when register failed 1`] = `
               </label>
               <label>
                 <input
-                  checked={false}
+                  checked={true}
                   name="role"
                   onBlur={[Function]}
                   onChange={[Function]}

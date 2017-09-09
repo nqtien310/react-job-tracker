@@ -11,7 +11,7 @@ import ErrorMessage from '../components/ErrorMessage'
 import Form from '../components/Form'
 import './form.css'
 
-class RegisterForm extends Form{
+class UserForm extends Form{
   fields() {
     let fields = [
       {name: "email", label: "Email", type:"email", component: "input"},
@@ -44,13 +44,13 @@ class RegisterForm extends Form{
   }
 }
 
-RegisterForm = reduxForm({
+UserForm = reduxForm({
   form: 'login',
   enableReinitialize: true
-})(RegisterForm)
+})(UserForm)
 
-RegisterForm = connect(null, {
+UserForm = connect(null, {
   createUser
-})(RegisterForm)
+})(UserForm)
 
-export default RegisterForm
+export default UserForm
