@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  MINIMUM_PASSWORD_LENGTH = 8
   ROLES = [
     ROLE_USER    = 'user',
     ROLE_MANAGER = 'manager',
@@ -9,11 +10,12 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :full_name, presence: true
-  has_secure_password
+
+  has_secure_password(validations: true)
   scope :regular, Proc.new { where(role: ROLE_USER) }
   before_validation :assign_default_role!, if: :role_omitted?
-  validates :password, presence: true, on: :create
-  validates :password_confirmation, presence: true, on: :create
+  validates_length_of :password, minimum: MINIMUM_PASSWORD_LENGTH, allow_blank: true
+  validates_presence_of :password_confirmation, if: Proc.new {|user| user.password.present?}
 
   has_many :entries, dependent: :destroy
 

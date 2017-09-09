@@ -74,4 +74,123 @@ RSpec.describe User, type: :model do
       expect(user.reload.role).to eq User::DEFAULT_ROLE
     end
   end
+
+  context 'password validation' do
+    context 'create' do
+      shared_examples 'raise error' do
+        it 'should raise the following error' do
+          expect {
+            User.create!(email: email,
+                         full_name: fn,
+                         password: password,
+                         password_confirmation: confirmation)
+          }.to raise_error(ActiveRecord::RecordInvalid, message)
+        end
+      end
+
+      let(:email) { 'user@gmail.com' }
+      let(:fn)    { 'user_gmail.com' }
+      let(:password) { nil }
+      let(:confirmation) { nil }
+
+      context 'password does not present' do
+        let(:message) { "Validation failed: Password can't be blank" }
+        it_behaves_like 'raise error'
+      end
+
+      context 'validates password length' do
+        let(:password) { '1234' }
+        let(:message) { "Validation failed: Password is too short (minimum is 8 characters), Password confirmation can't be blank" }
+        it_behaves_like 'raise error'
+      end
+
+      context 'validates password_confirmation presence' do
+        let(:password) { '12345678' }
+        let(:message) { "Validation failed: Password confirmation can't be blank" }
+        it_behaves_like 'raise error'
+      end
+
+      context 'validates password_confirmation matched' do
+        let(:password) { '12345678' }
+        let(:confirmation) { '1234567' }
+        let(:message) { "Validation failed: Password confirmation doesn't match Password" }
+        it_behaves_like 'raise error'
+      end
+
+      context 'valid' do
+        let(:password) { '12345678' }
+        let(:confirmation) { '12345678' }
+
+        it 'creates User successfully' do
+          expect {
+            User.create!(email: email,
+                         full_name: fn,
+                         password: password,
+                         password_confirmation: confirmation)
+          }.not_to raise_error
+        end
+      end
+    end
+
+    context 'update' do
+      let!(:user) { create(:user) }
+
+      shared_examples 'raise error' do
+        it 'should raise the following error' do
+          expect {
+            user.assign_attributes(email: 'newemail@gmail.com',
+                                   password: password,
+                                   password_confirmation: confirmation)
+            user.save!
+          }.to raise_error(ActiveRecord::RecordInvalid, message)
+        end
+      end
+
+      let(:password) { nil }
+      let(:confirmation ) { nil }
+
+      context 'password does not present' do
+        it 'updates successfully' do
+          expect {
+            user.assign_attributes(email: 'newemail@gmail.com')
+            user.save!
+          }.not_to raise_error
+        end
+      end
+
+      context 'validates password length' do
+        let(:password) { '1234' }
+        let(:message) { "Validation failed: Password is too short (minimum is 8 characters), Password confirmation can't be blank"}
+        it_behaves_like 'raise error'
+      end
+
+      context 'validates password_confirmation presence' do
+        let(:password) { '12345678' }
+        let(:message) { "Validation failed: Password confirmation can't be blank"}
+        it_behaves_like 'raise error'
+      end
+
+      context 'validates password_confirmation matched' do
+        let(:password) { '12345678' }
+        let(:confirmation) { '1234' }
+        let(:message) { "Validation failed: Password confirmation doesn't match Password"}
+        it_behaves_like 'raise error'
+      end
+
+      context 'password & confirm matches' do
+        let(:password) { '123456789' }
+        let(:confirmation) { '123456789' }
+
+        it 'updates successfully' do
+          expect {
+            user.assign_attributes(email: 'newemail@gmail.com',
+                                  password: password,
+                                  password_confirmation: confirmation)
+            user.save!
+          }.not_to raise_error
+          expect(user.authenticate(password)).not_to be_nil
+        end
+      end
+    end
+  end
 end
