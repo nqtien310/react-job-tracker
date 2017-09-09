@@ -24,8 +24,8 @@ it('Listing (No Entries)', (done) => {
 
 it('Listing (With entries)', (done) => {
   let data = [
-    {"id":42,"time_in_second":100,"distance_in_metre":100.0,"formatted_date":"2017-09-03","speed":1.0,"date":"2017-09-03"},
-    {"id":43,"time_in_second":200,"distance_in_metre":200.0,"formatted_date":"2017-09-06","speed":1.0,"date":"2017-09-06"}
+    {"id":42,"time_in_second":100,"distance_in_metre":100.0,"formatted_distance":0.1,"formatted_speed":"3.6km/h","formatted_date":"2017-09-03","speed":1.0,"date":"2017-09-03"},
+    {"id":43,"time_in_second":200,"distance_in_metre":200.0,"formatted_distance":0.2,"formatted_speed":"3.6km/h","formatted_date":"2017-09-06","speed":1.0,"date":"2017-09-06"}
   ]
 
   stubApiSuccess("get", data)

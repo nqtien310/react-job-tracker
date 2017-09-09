@@ -1,4 +1,5 @@
 class WeeklySummary < ActiveModelSerializers::Model
+  include UnitFormattable
   attr_reader :start_date, :end_date, :entries
 
   def initialize(entries, start_date, end_date)

@@ -12,13 +12,13 @@ export default function Entry(props){
         {formattedDate}
       </td>
       <td>
-        {entry.distance_in_metre} m
+        {entry.formatted_distance}
       </td>
       <td>
         {entry.readable_time}
       </td>
       <td>
-        {entry.speed} m/s
+        {entry.formatted_speed}
       </td>
       <td className="actions">
         <a onClick={()=> props.onDelete(entry.id)} className="btn btn-danger">

@@ -193,13 +193,11 @@ exports[`Regular User Home (With Entries) 1`] = `
             Sunday, September 3rd 2017
           </td>
           <td>
-            100
-             m
+            0.1
           </td>
           <td />
           <td>
-            1
-             m/s
+            3.6km/h
           </td>
           <td
             className="actions"
@@ -229,13 +227,11 @@ exports[`Regular User Home (With Entries) 1`] = `
             Wednesday, September 6th 2017
           </td>
           <td>
-            200
-             m
+            0.2
           </td>
           <td />
           <td>
-            1
-             m/s
+            3.6km/h
           </td>
           <td
             className="actions"

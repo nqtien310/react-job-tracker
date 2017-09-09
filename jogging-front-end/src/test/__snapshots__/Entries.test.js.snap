@@ -97,15 +97,9 @@ exports[`Create entry 1`] = `
         >
           Sunday, September 3rd 2017
         </td>
-        <td>
-          100
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
@@ -133,15 +127,9 @@ exports[`Create entry 1`] = `
         >
           Wednesday, September 6th 2017
         </td>
-        <td>
-          200
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
@@ -283,15 +271,9 @@ exports[`Create entry 2`] = `
         >
           Sunday, September 3rd 2017
         </td>
-        <td>
-          100
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
@@ -319,15 +301,9 @@ exports[`Create entry 2`] = `
         >
           Wednesday, September 6th 2017
         </td>
-        <td>
-          200
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
@@ -355,15 +331,9 @@ exports[`Create entry 2`] = `
         >
           Saturday, September 9th 2017
         </td>
-        <td>
-          300
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
@@ -505,15 +475,9 @@ exports[`Delete entry 1`] = `
         >
           Sunday, September 3rd 2017
         </td>
-        <td>
-          100
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
@@ -541,15 +505,9 @@ exports[`Delete entry 1`] = `
         >
           Wednesday, September 6th 2017
         </td>
-        <td>
-          200
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
@@ -691,15 +649,9 @@ exports[`Delete entry 2`] = `
         >
           Wednesday, September 6th 2017
         </td>
-        <td>
-          200
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
@@ -934,13 +886,11 @@ exports[`Listing (With entries) 1`] = `
           Sunday, September 3rd 2017
         </td>
         <td>
-          100
-           m
+          0.1
         </td>
         <td />
         <td>
-          1
-           m/s
+          3.6km/h
         </td>
         <td
           className="actions"
@@ -970,13 +920,11 @@ exports[`Listing (With entries) 1`] = `
           Wednesday, September 6th 2017
         </td>
         <td>
-          200
-           m
+          0.2
         </td>
         <td />
         <td>
-          1
-           m/s
+          3.6km/h
         </td>
         <td
           className="actions"
@@ -1119,15 +1067,9 @@ exports[`Update entry 1`] = `
         >
           Wednesday, September 6th 2017
         </td>
-        <td>
-          200
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
@@ -1269,15 +1211,9 @@ exports[`Update entry 2`] = `
         >
           Wednesday, September 6th 2017
         </td>
-        <td>
-          500
-           m
-        </td>
         <td />
-        <td>
-          1
-           m/s
-        </td>
+        <td />
+        <td />
         <td
           className="actions"
         >
