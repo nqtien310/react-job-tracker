@@ -2,7 +2,7 @@ class Entry < ApplicationRecord
   include UnitFormattable
   validates :distance_in_metre, presence: true
   validates :readable_time, presence: true
-  validates :date, presence: true, uniqueness: { scope: 'user_id' }
+  validates :date, presence: true
   validates :user, presence: true
 
   before_save :set_time_in_second

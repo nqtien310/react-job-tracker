@@ -4,6 +4,7 @@ import { store, browserHistory } from './store'
 import { Router } from 'react-router'
 import { fetchMyUser } from './epics/fetchMyUserEpic'
 import auth from './auth'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends React.Component {
